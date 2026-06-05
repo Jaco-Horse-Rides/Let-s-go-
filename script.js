@@ -1,4 +1,3 @@
-```javascript
 /* ========================= */
 /* 🔥 NAVBAR SCROLL */
 /* ========================= */
@@ -32,4 +31,3 @@ window.addEventListener("scroll", () => {
 // FAQ
 // Animaciones Scroll
 // WhatsApp Floating Button
-```
