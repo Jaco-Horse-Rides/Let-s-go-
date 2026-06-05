@@ -2,32 +2,29 @@
 /* 🔥 NAVBAR SCROLL */
 /* ========================= */
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
-  const navbar =
-  document.querySelector(".navbar");
+const navbar =
+document.querySelector(".navbar");
 
-  if(window.scrollY > 50){
+if(window.scrollY > 50){
 
-    navbar.classList.add("scrolled");
+navbar.classList.add("scrolled");
 
-  }else{
+}else{
 
-    navbar.classList.remove("scrolled");
+navbar.classList.remove("scrolled");
 
-  }
+}
 
 });
 
 /* ========================= */
-/* 🔥 FUTURAS ANIMACIONES */
+/* 🔥 FUTURAS FUNCIONES */
 /* ========================= */
 
-// Aquí iremos agregando:
-//
-// Slider Tours
-// Galería Premium
+// Tours
+// Gallery
 // Reviews
 // FAQ
-// Animaciones Scroll
-// WhatsApp Floating Button
+// Contact
