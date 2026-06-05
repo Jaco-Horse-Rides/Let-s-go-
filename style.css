@@ -1,1 +1,291 @@
+```css
+/* ========================= */
+/* 🔥 RESET */
+/* ========================= */
 
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#111;
+}
+
+/* ========================= */
+/* 🔥 NAVBAR */
+/* ========================= */
+
+.navbar{
+
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:100%;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:25px 8%;
+
+  z-index:1000;
+
+  transition:.4s;
+}
+
+.navbar.scrolled{
+  background:#000;
+  backdrop-filter:blur(10px);
+}
+
+/* ========================= */
+/* 🔥 MENU */
+/* ========================= */
+
+.menu{
+  display:flex;
+  gap:40px;
+}
+
+.menu a{
+
+  text-decoration:none;
+  color:white;
+
+  font-weight:500;
+
+  transition:.3s;
+}
+
+.menu a:hover{
+  color:#ff7a00;
+}
+
+/* ========================= */
+/* 🔥 BOTON NARANJA */
+/* ========================= */
+
+.btn-book{
+
+  text-decoration:none;
+
+  background:#ff7a00;
+
+  color:white;
+
+  padding:15px 28px;
+
+  border-radius:50px;
+
+  font-weight:600;
+
+  transition:.3s;
+}
+
+.btn-book:hover{
+
+  transform:translateY(-3px);
+
+  background:#ff9500;
+}
+
+/* ========================= */
+/* 🔥 HERO */
+/* ========================= */
+
+.hero{
+
+  height:100vh;
+
+  background:url("images/hero-bg.jpg");
+
+  background-size:cover;
+  background-position:center;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  position:relative;
+}
+
+/* ========================= */
+/* 🔥 OSCURECER IMAGEN */
+/* ========================= */
+
+.overlay{
+
+  position:absolute;
+
+  width:100%;
+  height:100%;
+
+  background:rgba(0,0,0,.55);
+}
+
+/* ========================= */
+/* 🔥 CONTENIDO HERO */
+/* ========================= */
+
+.hero-content{
+
+  position:relative;
+
+  z-index:2;
+
+  text-align:center;
+
+  color:white;
+
+  max-width:900px;
+}
+
+/* ========================= */
+/* 🔥 TITULO */
+/* ========================= */
+
+.hero-content h1{
+
+  font-family:'Oswald',sans-serif;
+
+  font-size:110px;
+
+  line-height:1;
+
+  text-transform:uppercase;
+
+  margin-bottom:15px;
+}
+
+.hero-content span{
+
+  display:block;
+
+  color:#ff7a00;
+
+  font-size:65px;
+
+  text-transform:none;
+}
+
+/* ========================= */
+/* 🔥 SUBTITULO */
+/* ========================= */
+
+.hero-content p{
+
+  font-size:24px;
+
+  margin-bottom:15px;
+
+  letter-spacing:2px;
+}
+
+.hero-content h3{
+
+  font-weight:300;
+
+  margin-bottom:40px;
+}
+
+/* ========================= */
+/* 🔥 BOTONES HERO */
+/* ========================= */
+
+.hero-buttons{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:20px;
+
+  flex-wrap:wrap;
+}
+
+/* ========================= */
+/* 🔥 BOTON PRINCIPAL */
+/* ========================= */
+
+.btn-orange{
+
+  text-decoration:none;
+
+  background:#ff7a00;
+
+  color:white;
+
+  padding:18px 35px;
+
+  border-radius:50px;
+
+  font-weight:600;
+
+  transition:.3s;
+}
+
+.btn-orange:hover{
+
+  transform:translateY(-3px);
+
+  background:#ff9500;
+}
+
+/* ========================= */
+/* 🔥 BOTON SECUNDARIO */
+/* ========================= */
+
+.btn-video{
+
+  text-decoration:none;
+
+  border:2px solid white;
+
+  color:white;
+
+  padding:18px 35px;
+
+  border-radius:50px;
+
+  transition:.3s;
+}
+
+.btn-video:hover{
+
+  background:white;
+
+  color:black;
+}
+
+/* ========================= */
+/* 🔥 RESPONSIVE */
+/* ========================= */
+
+@media(max-width:768px){
+
+.hero-content h1{
+  font-size:65px;
+}
+
+.hero-content span{
+  font-size:40px;
+}
+
+.hero-content p{
+  font-size:18px;
+}
+
+.menu{
+  display:none;
+}
+
+}
+```
