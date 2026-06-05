@@ -1,3 +1,6 @@
+/* ========================= */
+/* PARTE 1 */
+/* ========================= */
 
 /* ========================= */
 /* 🔥 RESET */
@@ -10,9 +13,13 @@ box-sizing:border-box;
 }
 
 body{
+
 font-family:'Poppins',sans-serif;
+
 background:#000;
+
 overflow-x:hidden;
+
 }
 
 /* ========================= */
@@ -20,56 +27,107 @@ overflow-x:hidden;
 /* ========================= */
 
 .navbar{
+
 position:fixed;
+
 top:0;
+
 left:0;
+
 width:100%;
+
 padding:25px 7%;
+
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
+
 z-index:999;
+
 transition:.4s;
+
 }
 
 .navbar.scrolled{
+
 background:rgba(0,0,0,.90);
+
 backdrop-filter:blur(10px);
+
 }
+
+/* ========================= */
+/* 🔥 LOGO */
+/* ========================= */
 
 .logo h2{
+
 color:white;
+
 font-size:28px;
+
 font-weight:600;
+
 }
 
+/* ========================= */
+/* 🔥 MENU */
+/* ========================= */
+
 .navbar ul{
+
 display:flex;
+
 gap:35px;
+
 list-style:none;
+
 }
 
 .navbar ul li a{
+
 color:white;
+
 text-decoration:none;
+
 font-weight:500;
+
 transition:.3s;
+
 }
 
 .navbar ul li a:hover{
+
 color:#ff8500;
+
 }
 
+/* ========================= */
+/* 🔥 BOTON */
+/* ========================= */
+
 .btn-book{
+
 background:#ff8500;
+
 padding:16px 28px;
+
 border-radius:10px;
+
 text-decoration:none;
+
 color:white;
+
 font-weight:600;
+
 display:flex;
+
 gap:10px;
+
 align-items:center;
+
 }
 
 /* ========================= */
@@ -77,19 +135,29 @@ align-items:center;
 /* ========================= */
 
 .hero{
+
 height:100vh;
+
 background-image:
 linear-gradient(
 rgba(0,0,0,.45),
 rgba(0,0,0,.60)),
 url("Portada.png");
+
 background-size:cover;
+
 background-position:center center;
+
 background-repeat:no-repeat;
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
 position:relative;
+
 }
 
 /* ========================= */
@@ -97,38 +165,67 @@ position:relative;
 /* ========================= */
 
 .hero-content{
+
 text-align:left;
+
 width:80%;
+
 max-width:1300px;
+
 color:white;
+
 }
 
+/* ========================= */
+/* 🔥 TITULO */
+/* ========================= */
+
 .hero-content h1{
+
 font-family:'Oswald',sans-serif;
+
 font-size:120px;
+
 line-height:1;
+
 font-weight:700;
+
 }
 
 .hero-content h2{
+
 font-size:70px;
+
 color:#ff8500;
+
 font-weight:400;
+
 margin-top:-15px;
+
 font-family:'Oswald',sans-serif;
+
 }
 
 .hero-content p{
+
 font-size:28px;
+
 margin-top:20px;
+
 font-weight:600;
+
 }
 
 .hero-content span{
+
 display:block;
+
 font-size:24px;
+
 margin-top:15px;
+
 opacity:.9;
+
 }
 
 /* ========================= */
@@ -136,26 +233,43 @@ opacity:.9;
 /* ========================= */
 
 .hero-buttons{
+
 margin-top:40px;
+
 display:flex;
+
 gap:20px;
+
 }
 
 .btn-orange{
+
 background:#ff8500;
+
 padding:18px 35px;
+
 border-radius:10px;
+
 text-decoration:none;
+
 color:white;
+
 font-weight:600;
+
 }
 
 .btn-video{
+
 border:2px solid white;
+
 padding:18px 35px;
+
 border-radius:10px;
+
 text-decoration:none;
+
 color:white;
+
 }
 
 /* ========================= */
@@ -163,72 +277,146 @@ color:white;
 /* ========================= */
 
 .stats{
+
 position:absolute;
+
 bottom:30px;
+
 left:50%;
+
 transform:translateX(-50%);
+
 width:85%;
+
 background:rgba(15,15,15,.90);
+
 backdrop-filter:blur(10px);
+
 border-radius:15px;
+
 padding:25px;
+
 display:grid;
+
 grid-template-columns:repeat(4,1fr);
+
 gap:20px;
+
 }
 
 .stat{
+
 display:flex;
+
 gap:15px;
+
 align-items:center;
+
 color:white;
+
 }
 
 .stat i{
+
 font-size:35px;
+
 color:#ff8500;
+
 }
 
 .stat h3{
+
 font-size:22px;
+
 }
 
 .stat p{
+
 font-size:15px;
+
 opacity:.8;
+
 }
 
+/* ========================= */
+/* 🔥 RESPONSIVE */
+/* ========================= */
+
+@media(max-width:900px){
+
+.navbar ul{
+
+display:none;
+
+}
+
+.hero-content h1{
+
+font-size:65px;
+
+}
+
+.hero-content h2{
+
+font-size:45px;
+
+}
+
+.stats{
+
+grid-template-columns:1fr 1fr;
+
+}
 /* ========================= */
 /* 🔥 TOURS SECTION */
 /* ========================= */
 
 .tours{
+
 background:#f8f8f8;
+
 padding:120px 7%;
+
 }
 
 .section-title{
+
 text-align:center;
+
 margin-bottom:60px;
+
 }
 
 .section-title span{
+
 color:#ff8500;
+
 font-weight:600;
+
 letter-spacing:2px;
+
 }
 
 .section-title h2{
+
 font-size:55px;
+
 font-family:'Oswald',sans-serif;
+
 color:#111;
+
 margin-top:10px;
+
 }
 
 .tour-cards{
+
 display:grid;
+
 grid-template-columns:repeat(3,1fr);
+
 gap:35px;
+
 }
 
 /* ========================= */
@@ -236,50 +424,81 @@ gap:35px;
 /* ========================= */
 
 .card{
+
 background:white;
+
 border-radius:20px;
+
 overflow:hidden;
+
 box-shadow:0 10px 30px rgba(0,0,0,.10);
+
 transition:.4s;
+
 }
 
 .card:hover{
+
 transform:translateY(-10px);
+
 }
 
 .card-image{
+
 position:relative;
+
 height:260px;
+
 overflow:hidden;
+
 }
 
 .card-image img{
+
 width:100%;
+
 height:100%;
+
 object-fit:cover;
+
 }
 
 .badge{
+
 position:absolute;
+
 top:15px;
+
 left:15px;
+
 padding:8px 15px;
+
 border-radius:50px;
+
 font-size:14px;
+
 font-weight:600;
+
 color:white;
+
 }
 
 .orange{
+
 background:#ff8500;
+
 }
 
 .green{
+
 background:#4CAF50;
+
 }
 
 .blue{
+
 background:#1e88e5;
+
 }
 
 /* ========================= */
@@ -287,66 +506,109 @@ background:#1e88e5;
 /* ========================= */
 
 .card-content{
+
 padding:25px;
+
 }
 
 .card-header{
+
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
+
 margin-bottom:20px;
+
 }
 
 .card-header h3{
+
 font-size:28px;
+
 color:#111;
+
 }
 
 .price{
+
 font-size:38px;
+
 font-weight:700;
+
 color:#ff8500;
+
 }
 
 .green-price{
+
 color:#4CAF50;
+
 }
 
 .blue-price{
+
 color:#1e88e5;
+
 }
 
 .card-content ul{
+
 list-style:none;
+
 margin-bottom:25px;
+
 }
 
 .card-content ul li{
+
 margin-bottom:12px;
+
 color:#555;
+
 font-size:16px;
+
 }
 
+/* ========================= */
+/* 🔥 BOTONES */
+/* ========================= */
+
 .btn-tour{
+
 display:block;
+
 text-align:center;
+
 padding:16px;
+
 border-radius:10px;
+
 color:white;
+
 font-weight:600;
+
 text-decoration:none;
+
 }
 
 .orange-btn{
+
 background:#ff8500;
+
 }
 
 .green-btn{
+
 background:#4CAF50;
+
 }
 
 .blue-btn{
+
 background:#1e88e5;
+
 }
 
 /* ========================= */
@@ -356,28 +618,271 @@ background:#1e88e5;
 @media(max-width:1000px){
 
 .tour-cards{
+
 grid-template-columns:1fr;
+
+}
+  }
+/* ========================= */
+/* PARTE 2*/
+/* ========================= */
+
+/* ========================= */
+/* 🔥 TOURS SECTION */
+/* ========================= */
+
+.tours{
+
+background:#f8f8f8;
+
+padding:120px 7%;
+
+}
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.section-title span{
+
+color:#ff8500;
+
+font-weight:600;
+
+letter-spacing:2px;
+
+}
+
+.section-title h2{
+
+font-size:55px;
+
+font-family:'Oswald',sans-serif;
+
+color:#111;
+
+margin-top:10px;
+
+}
+
+.tour-cards{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:35px;
+
+}
+
+/* ========================= */
+/* 🔥 CARD */
+/* ========================= */
+
+.card{
+
+background:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 10px 30px rgba(0,0,0,.10);
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.card-image{
+
+position:relative;
+
+height:260px;
+
+overflow:hidden;
+
+}
+
+.card-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+.badge{
+
+position:absolute;
+
+top:15px;
+
+left:15px;
+
+padding:8px 15px;
+
+border-radius:50px;
+
+font-size:14px;
+
+font-weight:600;
+
+color:white;
+
+}
+
+.orange{
+
+background:#ff8500;
+
+}
+
+.green{
+
+background:#4CAF50;
+
+}
+
+.blue{
+
+background:#1e88e5;
+
+}
+
+/* ========================= */
+/* 🔥 CARD CONTENT */
+/* ========================= */
+
+.card-content{
+
+padding:25px;
+
+}
+
+.card-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+.card-header h3{
+
+font-size:28px;
+
+color:#111;
+
+}
+
+.price{
+
+font-size:38px;
+
+font-weight:700;
+
+color:#ff8500;
+
+}
+
+.green-price{
+
+color:#4CAF50;
+
+}
+
+.blue-price{
+
+color:#1e88e5;
+
+}
+
+.card-content ul{
+
+list-style:none;
+
+margin-bottom:25px;
+
+}
+
+.card-content ul li{
+
+margin-bottom:12px;
+
+color:#555;
+
+font-size:16px;
+
+}
+
+/* ========================= */
+/* 🔥 BOTONES */
+/* ========================= */
+
+.btn-tour{
+
+display:block;
+
+text-align:center;
+
+padding:16px;
+
+border-radius:10px;
+
+color:white;
+
+font-weight:600;
+
+text-decoration:none;
+
+}
+
+.orange-btn{
+
+background:#ff8500;
+
+}
+
+.green-btn{
+
+background:#4CAF50;
+
+}
+
+.blue-btn{
+
+background:#1e88e5;
+
+}
+
+/* ========================= */
+/* 🔥 RESPONSIVE */
+/* ========================= */
+
+@media(max-width:1000px){
+
+.tour-cards{
+
+grid-template-columns:1fr;
+
 }
 
 }
 
-@media(max-width:900px){
-
-.navbar ul{
-display:none;
-}
-
-.hero-content h1{
-font-size:65px;
-}
-
-.hero-content h2{
-font-size:45px;
-}
-
-.stats{
-grid-template-columns:1fr 1fr;
-}
-
-}
-
+toma
