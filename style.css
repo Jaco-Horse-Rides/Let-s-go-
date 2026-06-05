@@ -138,11 +138,13 @@ background-image:
 linear-gradient(
 rgba(0,0,0,.45),
 rgba(0,0,0,.60)),
-url("images/hero-bg.jpg");
+url("Portada.png");
 
 background-size:cover;
 
-background-position:center;
+background-position:center center;
+
+background-repeat:no-repeat;
 
 display:flex;
 
