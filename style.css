@@ -3,18 +3,19 @@
 /* ========================= */
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-  font-family:'Poppins',sans-serif;
-  background:#111;
+
+font-family:'Poppins',sans-serif;
+
+background:#000;
+
+overflow-x:hidden;
+
 }
 
 /* ========================= */
@@ -23,77 +24,106 @@ body{
 
 .navbar{
 
-  position:fixed;
-  top:0;
-  left:0;
+position:fixed;
 
-  width:100%;
+top:0;
 
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+left:0;
 
-  padding:25px 8%;
+width:100%;
 
-  z-index:1000;
+padding:25px 7%;
 
-  transition:.4s;
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+z-index:999;
+
+transition:.4s;
+
 }
 
 .navbar.scrolled{
-  background:#000;
-  backdrop-filter:blur(10px);
+
+background:rgba(0,0,0,.90);
+
+backdrop-filter:blur(10px);
+
+}
+
+/* ========================= */
+/* 🔥 LOGO */
+/* ========================= */
+
+.logo h2{
+
+color:white;
+
+font-size:28px;
+
+font-weight:600;
+
 }
 
 /* ========================= */
 /* 🔥 MENU */
 /* ========================= */
 
-.menu{
-  display:flex;
-  gap:40px;
+.navbar ul{
+
+display:flex;
+
+gap:35px;
+
+list-style:none;
+
 }
 
-.menu a{
+.navbar ul li a{
 
-  text-decoration:none;
-  color:white;
+color:white;
 
-  font-weight:500;
+text-decoration:none;
 
-  transition:.3s;
+font-weight:500;
+
+transition:.3s;
+
 }
 
-.menu a:hover{
-  color:#ff7a00;
+.navbar ul li a:hover{
+
+color:#ff8500;
+
 }
 
 /* ========================= */
-/* 🔥 BOTON NARANJA */
+/* 🔥 BOTON */
 /* ========================= */
 
 .btn-book{
 
-  text-decoration:none;
+background:#ff8500;
 
-  background:#ff7a00;
+padding:16px 28px;
 
-  color:white;
+border-radius:10px;
 
-  padding:15px 28px;
+text-decoration:none;
 
-  border-radius:50px;
+color:white;
 
-  font-weight:600;
+font-weight:600;
 
-  transition:.3s;
-}
+display:flex;
 
-.btn-book:hover{
+gap:10px;
 
-  transform:translateY(-3px);
+align-items:center;
 
-  background:#ff9500;
 }
 
 /* ========================= */
@@ -102,49 +132,42 @@ body{
 
 .hero{
 
-  height:100vh;
+height:100vh;
 
-  background:url("images/hero-bg.jpg");
+background-image:
+linear-gradient(
+rgba(0,0,0,.45),
+rgba(0,0,0,.60)),
+url("images/hero-bg.jpg");
 
-  background-size:cover;
-  background-position:center;
+background-size:cover;
 
-  display:flex;
-  justify-content:center;
-  align-items:center;
+background-position:center;
 
-  position:relative;
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+position:relative;
+
 }
 
 /* ========================= */
-/* 🔥 OSCURECER IMAGEN */
-/* ========================= */
-
-.overlay{
-
-  position:absolute;
-
-  width:100%;
-  height:100%;
-
-  background:rgba(0,0,0,.55);
-}
-
-/* ========================= */
-/* 🔥 CONTENIDO HERO */
+/* 🔥 HERO CONTENT */
 /* ========================= */
 
 .hero-content{
 
-  position:relative;
+text-align:left;
 
-  z-index:2;
+width:80%;
 
-  text-align:center;
+max-width:1300px;
 
-  color:white;
+color:white;
 
-  max-width:900px;
 }
 
 /* ========================= */
@@ -153,46 +176,50 @@ body{
 
 .hero-content h1{
 
-  font-family:'Oswald',sans-serif;
+font-family:'Oswald',sans-serif;
 
-  font-size:110px;
+font-size:120px;
 
-  line-height:1;
+line-height:1;
 
-  text-transform:uppercase;
+font-weight:700;
 
-  margin-bottom:15px;
+}
+
+.hero-content h2{
+
+font-size:70px;
+
+color:#ff8500;
+
+font-weight:400;
+
+margin-top:-15px;
+
+font-family:'Oswald',sans-serif;
+
+}
+
+.hero-content p{
+
+font-size:28px;
+
+margin-top:20px;
+
+font-weight:600;
+
 }
 
 .hero-content span{
 
-  display:block;
+display:block;
 
-  color:#ff7a00;
+font-size:24px;
 
-  font-size:65px;
+margin-top:15px;
 
-  text-transform:none;
-}
+opacity:.9;
 
-/* ========================= */
-/* 🔥 SUBTITULO */
-/* ========================= */
-
-.hero-content p{
-
-  font-size:24px;
-
-  margin-bottom:15px;
-
-  letter-spacing:2px;
-}
-
-.hero-content h3{
-
-  font-weight:300;
-
-  margin-bottom:40px;
 }
 
 /* ========================= */
@@ -201,89 +228,138 @@ body{
 
 .hero-buttons{
 
-  display:flex;
+margin-top:40px;
 
-  justify-content:center;
+display:flex;
 
-  gap:20px;
+gap:20px;
 
-  flex-wrap:wrap;
 }
-
-/* ========================= */
-/* 🔥 BOTON PRINCIPAL */
-/* ========================= */
 
 .btn-orange{
 
-  text-decoration:none;
+background:#ff8500;
 
-  background:#ff7a00;
+padding:18px 35px;
 
-  color:white;
+border-radius:10px;
 
-  padding:18px 35px;
+text-decoration:none;
 
-  border-radius:50px;
+color:white;
 
-  font-weight:600;
+font-weight:600;
 
-  transition:.3s;
 }
-
-.btn-orange:hover{
-
-  transform:translateY(-3px);
-
-  background:#ff9500;
-}
-
-/* ========================= */
-/* 🔥 BOTON SECUNDARIO */
-/* ========================= */
 
 .btn-video{
 
-  text-decoration:none;
+border:2px solid white;
 
-  border:2px solid white;
+padding:18px 35px;
 
-  color:white;
+border-radius:10px;
 
-  padding:18px 35px;
+text-decoration:none;
 
-  border-radius:50px;
+color:white;
 
-  transition:.3s;
 }
 
-.btn-video:hover{
+/* ========================= */
+/* 🔥 STATS */
+/* ========================= */
 
-  background:white;
+.stats{
 
-  color:black;
+position:absolute;
+
+bottom:30px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:85%;
+
+background:rgba(15,15,15,.90);
+
+backdrop-filter:blur(10px);
+
+border-radius:15px;
+
+padding:25px;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+}
+
+.stat{
+
+display:flex;
+
+gap:15px;
+
+align-items:center;
+
+color:white;
+
+}
+
+.stat i{
+
+font-size:35px;
+
+color:#ff8500;
+
+}
+
+.stat h3{
+
+font-size:22px;
+
+}
+
+.stat p{
+
+font-size:15px;
+
+opacity:.8;
+
 }
 
 /* ========================= */
 /* 🔥 RESPONSIVE */
 /* ========================= */
 
-@media(max-width:768px){
+@media(max-width:900px){
+
+.navbar ul{
+
+display:none;
+
+}
 
 .hero-content h1{
-  font-size:65px;
+
+font-size:65px;
+
 }
 
-.hero-content span{
-  font-size:40px;
+.hero-content h2{
+
+font-size:45px;
+
 }
 
-.hero-content p{
-  font-size:18px;
-}
+.stats{
 
-.menu{
-  display:none;
+grid-template-columns:1fr 1fr;
+
 }
 
 }
