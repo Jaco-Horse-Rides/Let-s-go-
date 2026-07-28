@@ -623,266 +623,412 @@ grid-template-columns:1fr;
 
 }
   }
+```css
 /* ========================= */
-/* PARTE 2*/
-/* ========================= */
-
-/* ========================= */
-/* 🔥 TOURS SECTION */
+/* 🔥 SECCIÓN DE TOURS */
 /* ========================= */
 
 .tours{
-
-background:#f8f8f8;
-
-padding:120px 7%;
-
+  position:relative;
+  width:100%;
+  padding:85px 7% 95px;
+  background:#f7f7f7;
+  overflow:hidden;
 }
 
-.section-title{
+/* ========================= */
+/* 🔥 ENCABEZADO DE TOURS */
+/* ========================= */
 
-text-align:center;
-
-margin-bottom:60px;
-
+.tours-heading{
+  margin-bottom:42px;
+  text-align:center;
 }
 
-.section-title span{
-
-color:#ff8500;
-
-font-weight:600;
-
-letter-spacing:2px;
-
+.tours-heading span{
+  display:block;
+  margin-bottom:7px;
+  color:#ff8500;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:2px;
 }
 
-.section-title h2{
-
-font-size:55px;
-
-font-family:'Oswald',sans-serif;
-
-color:#111;
-
-margin-top:10px;
-
+.tours-heading h2{
+  color:#111111;
+  font-family:'Oswald',sans-serif;
+  font-size:48px;
+  font-weight:700;
+  line-height:1.1;
 }
+
+/* ========================= */
+/* 🔥 CONTENEDOR DE TARJETAS */
+/* ========================= */
 
 .tour-cards{
+  width:100%;
+  max-width:1380px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:30px;
+}
 
-display:grid;
+/* ========================= */
+/* 🔥 TARJETA DE TOUR */
+/* ========================= */
 
-grid-template-columns:repeat(3,1fr);
+.tour-card{
+  position:relative;
+  min-width:0;
+  background:#ffffff;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:16px;
+  box-shadow:0 10px 35px rgba(0,0,0,.10);
+  overflow:hidden;
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
 
-gap:35px;
+.tour-card:hover{
+  transform:translateY(-9px);
+  box-shadow:0 20px 45px rgba(0,0,0,.16);
+}
+
+/* ========================= */
+/* 🔥 IMAGEN DEL TOUR */
+/* ========================= */
+
+.tour-image{
+  position:relative;
+  width:100%;
+  height:270px;
+  overflow:hidden;
+  background:#dddddd;
+}
+
+.tour-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.16),
+    transparent 38%,
+    rgba(0,0,0,.05)
+  );
+  pointer-events:none;
+}
+
+.tour-image img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .55s ease;
+}
+
+.tour-card:hover .tour-image img{
+  transform:scale(1.06);
+}
+
+/* ========================= */
+/* 🔥 ETIQUETA DE DURACIÓN */
+/* ========================= */
+
+.tour-time{
+  position:absolute;
+  top:17px;
+  left:17px;
+  z-index:2;
+  padding:8px 16px;
+  border-radius:100px;
+  color:#ffffff;
+  font-size:13px;
+  font-weight:700;
+  line-height:1;
+  box-shadow:0 5px 15px rgba(0,0,0,.18);
+}
+
+.tour-time-orange{
+  background:#ff8500;
+}
+
+.tour-time-green{
+  background:#4caf50;
+}
+
+.tour-time-blue{
+  background:#087bc1;
+}
+
+/* ========================= */
+/* 🔥 BOTÓN DE FAVORITOS */
+/* ========================= */
+
+.tour-favorite{
+  position:absolute;
+  top:14px;
+  right:14px;
+  z-index:2;
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.70);
+  border-radius:50%;
+  background:rgba(0,0,0,.20);
+  color:#ffffff;
+  font-size:19px;
+  cursor:pointer;
+  backdrop-filter:blur(6px);
+  transition:
+    background .3s ease,
+    color .3s ease,
+    transform .3s ease;
+}
+
+.tour-favorite:hover{
+  background:#ffffff;
+  color:#ff8500;
+  transform:scale(1.08);
+}
+
+/* ========================= */
+/* 🔥 CONTENIDO DE LA TARJETA */
+/* ========================= */
+
+.tour-content{
+  padding:25px 24px 23px;
+}
+
+.tour-main-info{
+  min-height:55px;
+  margin-bottom:22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:18px;
+}
+
+.tour-main-info h3{
+  color:#161616;
+  font-family:'Oswald',sans-serif;
+  font-size:28px;
+  font-weight:700;
+  line-height:1.15;
+}
+
+/* ========================= */
+/* 🔥 PRECIO DEL TOUR */
+/* ========================= */
+
+.tour-price{
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.tour-price strong{
+  font-size:34px;
+  font-weight:700;
+  line-height:1;
+}
+
+.tour-price span{
+  color:#444444;
+  font-size:9px;
+  font-weight:700;
+  line-height:1.1;
+}
+
+.tour-price-orange strong{
+  color:#ff7800;
+}
+
+.tour-price-green strong{
+  color:#4caf50;
+}
+
+.tour-price-blue strong{
+  color:#087bc1;
+}
+
+/* ========================= */
+/* 🔥 BENEFICIOS DEL TOUR */
+/* ========================= */
+
+.tour-benefits{
+  min-height:132px;
+  margin:0 0 23px;
+  padding:0;
+  list-style:none;
+}
+
+.tour-benefits li{
+  margin-bottom:14px;
+  display:flex;
+  align-items:center;
+  gap:11px;
+  color:#444444;
+  font-size:15px;
+  line-height:1.35;
+}
+
+.tour-benefits li:last-child{
+  margin-bottom:0;
+}
+
+.tour-benefits i{
+  font-size:17px;
+}
+
+.tour-card-orange .tour-benefits i{
+  color:#ff8500;
+}
+
+.tour-card-green .tour-benefits i{
+  color:#4caf50;
+}
+
+.tour-card-blue .tour-benefits i{
+  color:#087bc1;
+}
+
+/* ========================= */
+/* 🔥 BOTONES DE RESERVA */
+/* ========================= */
+
+.tour-button{
+  width:100%;
+  min-height:52px;
+  padding:14px 20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:14px;
+  border-radius:7px;
+  color:#ffffff;
+  font-size:15px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
+  transition:
+    filter .3s ease,
+    transform .3s ease;
+}
+
+.tour-button i{
+  transition:transform .3s ease;
+}
+
+.tour-button:hover{
+  filter:brightness(1.08);
+  transform:translateY(-2px);
+}
+
+.tour-button:hover i{
+  transform:translateX(6px);
+}
+
+.tour-button-orange{
+  background:#ff7800;
+}
+
+.tour-button-green{
+  background:#4caf50;
+}
+
+.tour-button-blue{
+  background:#087bc1;
+}
+
+/* ========================= */
+/* 🔥 TOURS EN TABLET */
+/* ========================= */
+
+@media(max-width:1050px){
+
+  .tours{
+    padding:75px 5%;
+  }
+
+  .tour-cards{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .tour-card:last-child{
+    grid-column:1 / -1;
+    width:calc(50% - 15px);
+    justify-self:center;
+  }
 
 }
 
 /* ========================= */
-/* 🔥 CARD */
+/* 🔥 TOURS EN CELULAR */
 /* ========================= */
 
-.card{
+@media(max-width:720px){
 
-background:white;
+  .tours{
+    padding:65px 20px 75px;
+  }
 
-border-radius:20px;
+  .tours-heading{
+    margin-bottom:32px;
+  }
 
-overflow:hidden;
+  .tours-heading h2{
+    font-size:38px;
+  }
 
-box-shadow:0 10px 30px rgba(0,0,0,.10);
+  .tour-cards{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
 
-transition:.4s;
+  .tour-card:last-child{
+    grid-column:auto;
+    width:100%;
+  }
 
-}
+  .tour-image{
+    height:235px;
+  }
 
-.card:hover{
+  .tour-content{
+    padding:23px 20px 21px;
+  }
 
-transform:translateY(-10px);
+  .tour-main-info h3{
+    font-size:25px;
+  }
 
-}
-
-.card-image{
-
-position:relative;
-
-height:260px;
-
-overflow:hidden;
-
-}
-
-.card-image img{
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
-}
-
-.badge{
-
-position:absolute;
-
-top:15px;
-
-left:15px;
-
-padding:8px 15px;
-
-border-radius:50px;
-
-font-size:14px;
-
-font-weight:600;
-
-color:white;
-
-}
-
-.orange{
-
-background:#ff8500;
-
-}
-
-.green{
-
-background:#4CAF50;
-
-}
-
-.blue{
-
-background:#1e88e5;
+  .tour-price strong{
+    font-size:30px;
+  }
 
 }
 
 /* ========================= */
-/* 🔥 CARD CONTENT */
+/* 🔥 CELULARES PEQUEÑOS */
 /* ========================= */
 
-.card-content{
+@media(max-width:420px){
 
-padding:25px;
+  .tour-main-info{
+    flex-direction:column;
+    gap:12px;
+  }
 
-}
-
-.card-header{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-margin-bottom:20px;
+  .tour-benefits{
+    min-height:auto;
+  }
 
 }
 
-.card-header h3{
 
-font-size:28px;
-
-color:#111;
-
-}
-
-.price{
-
-font-size:38px;
-
-font-weight:700;
-
-color:#ff8500;
-
-}
-
-.green-price{
-
-color:#4CAF50;
-
-}
-
-.blue-price{
-
-color:#1e88e5;
-
-}
-
-.card-content ul{
-
-list-style:none;
-
-margin-bottom:25px;
-
-}
-
-.card-content ul li{
-
-margin-bottom:12px;
-
-color:#555;
-
-font-size:16px;
-
-}
-
-/* ========================= */
-/* 🔥 BOTONES */
-/* ========================= */
-
-.btn-tour{
-
-display:block;
-
-text-align:center;
-
-padding:16px;
-
-border-radius:10px;
-
-color:white;
-
-font-weight:600;
-
-text-decoration:none;
-
-}
-
-.orange-btn{
-
-background:#ff8500;
-
-}
-
-.green-btn{
-
-background:#4CAF50;
-
-}
-
-.blue-btn{
-
-background:#1e88e5;
-
-}
-
-/* ========================= */
-/* 🔥 RESPONSIVE */
-/* ========================= */
-
-@media(max-width:1000px){
-
-.tour-cards{
-
-grid-template-columns:1fr;
-
-}
-
-}
-
-toma
