@@ -3,427 +3,484 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>Jacó Horse Rides</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+    <title>Jacó Horse Rides</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- ========================= -->
+    <!-- GOOGLE FONTS -->
+    <!-- ========================= -->
 
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- ========================= -->
+    <!-- FONT AWESOME -->
+    <!-- ========================= -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- ========================= -->
+    <!-- CSS -->
+    <!-- ========================= -->
+
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<!-- ========================= -->
-<!-- 🔥 NAVBAR PARTE 1-->
-<!-- ========================= -->
-
-<nav class="navbar">
-
-<div class="logo">
-
-<h2>Jacó Horse Rides</h2>
-
-</div>
-
-<ul>
-
-<li><a href="#">Home</a></li>
-<li><a href="#tours">Tours</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Gallery</a></li>
-<li><a href="#">FAQ</a></li>
-<li><a href="#">Reviews</a></li>
-<li><a href="#">Contact</a></li>
-
-</ul>
-
-<a href="#" class="btn-book">
-
-<i class="fa-solid fa-calendar-days"></i>
-
-BOOK YOUR TOUR
-
-</a>
-
-</nav>
-
-<!-- ========================= -->
-<!-- 🔥 HERO -->
-<!-- ========================= -->
-
-<section class="hero">
-
-<div class="overlay"></div>
-
-<div class="hero-content">
-
-<h1>DISCOVER JACÓ</h1>
-
-<h2>on Horseback</h2>
-
-<p>
-Beach • Jungle • Mountains • Rivers
-</p>
-
-<span>
-Experience Costa Rica like never before.
-</span>
-
-<div class="hero-buttons">
-
-<a href="#" class="btn-orange">
-
-BOOK YOUR TOUR
-
-</a>
-
-<a href="#" class="btn-video">
-
-WATCH VIDEO
-
-</a>
-
-</div>
-
-</div>
-
-<!-- ========================= -->
-<!-- 🔥 STATS -->
-<!-- ========================= -->
-
-<div class="stats">
-
-<div class="stat">
-
-<i class="fa-regular fa-star"></i>
-
-<div>
-
-<h3>4.9/5 Rating</h3>
-
-<p>500+ Reviews</p>
-
-</div>
-
-</div>
-
-<div class="stat">
-
-<i class="fa-solid fa-users"></i>
-
-<div>
-
-<h3>500+</h3>
-
-<p>Happy Riders</p>
-
-</div>
-
-</div>
-
-<div class="stat">
-
-<i class="fa-solid fa-shield"></i>
-
-<div>
-
-<h3>Certified</h3>
-
-<p>Local Guides</p>
-
-</div>
-
-</div>
-
-<div class="stat">
-
-<i class="fa-solid fa-award"></i>
-
-<div>
-
-<h3>30+ Years</h3>
-
-<p>Experience</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ========================= -->
-<!-- 🔥 SECCIÓN DE TOURS -->
-<!-- ========================= -->
-
-<section class="tours" id="tours">
-
-  <!-- ========================= -->
-  <!-- 🔥 ENCABEZADO DE TOURS -->
-  <!-- ========================= -->
-
-  <div class="tours-heading">
-
-    <span>OUR TOURS</span>
-
-    <h2>Choose Your Adventure</h2>
-
-  </div>
-
-  <!-- ========================= -->
-  <!-- 🔥 CONTENEDOR DE TARJETAS -->
-  <!-- ========================= -->
-
-  <div class="tour-cards">
-
     <!-- ========================= -->
-    <!-- 🔥 TOUR 1: BEACH RIDE -->
+    <!-- NAVBAR -->
     <!-- ========================= -->
 
-    <article class="tour-card tour-card-orange">
+    <header>
 
-      <div class="tour-image">
+        <nav class="navbar">
 
-        <img
-          src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=1200&q=85"
-          alt="Horseback riding tour on the beach"
-          loading="lazy"
-        >
+            <a href="#" class="logo">
 
-        <span class="tour-time tour-time-orange">
-          1 HOUR
-        </span>
+                Jacó Horse Rides
 
-        <button
-          class="tour-favorite"
-          type="button"
-          aria-label="Add Beach Ride to favorites"
-        >
-          <i class="fa-regular fa-heart"></i>
-        </button>
+            </a>
 
-      </div>
+            <ul>
 
-      <div class="tour-content">
+                <li><a href="#home">Home</a></li>
 
-        <div class="tour-main-info">
+                <li><a href="#tours">Tours</a></li>
 
-          <h3>Beach Ride</h3>
+                <li><a href="#about">About Us</a></li>
 
-          <div class="tour-price tour-price-orange">
+                <li><a href="#gallery">Gallery</a></li>
 
-            <strong>$40</strong>
+                <li><a href="#faq">FAQ</a></li>
+
+                <li><a href="#reviews">Reviews</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+            <a href="#tours" class="btn-book">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                BOOK YOUR TOUR
+
+            </a>
+
+        </nav>
+
+    </header>
+
+    <!-- ========================= -->
+    <!-- HERO -->
+    <!-- ========================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>DISCOVER JACÓ</h1>
+
+            <h2>on Horseback</h2>
+
+            <p>
+
+                Beach • Jungle • Mountains • Rivers
+
+            </p>
 
             <span>
-              PER<br>
-              PERSON
+
+                Experience Costa Rica like never before.
+
             </span>
 
-          </div>
+            <div class="hero-buttons">
+
+                <a href="#tours" class="btn-orange">
+
+                    BOOK YOUR TOUR
+
+                </a>
+
+                <a href="#" class="btn-video">
+
+                    WATCH VIDEO
+
+                </a>
+
+            </div>
 
         </div>
 
-        <ul class="tour-benefits">
+        <!-- ========================= -->
+        <!-- STATS -->
+        <!-- ========================= -->
 
-          <li>
-            <i class="fa-regular fa-circle-check"></i>
-            Perfect for beginners
-          </li>
+        <div class="stats">
 
-          <li>
-            <i class="fa-regular fa-circle-check"></i>
-            Stunning ocean views
-          </li>
+            <div class="stat">
 
-          <li>
-            <i class="fa-regular fa-circle-check"></i>
-            Family friendly
-          </li>
+                <i class="fa-regular fa-star"></i>
 
-        </ul>
+                <div>
 
-        <a href="#" class="tour-button tour-button-orange">
+                    <h3>4.9/5 Rating</h3>
 
-          <span>RESERVE NOW</span>
+                    <p>500+ Reviews</p>
 
-          <i class="fa-solid fa-arrow-right"></i>
+                </div>
 
-        </a>
+            </div>
 
-      </div>
+            <div class="stat">
 
-    </article>
+                <i class="fa-solid fa-users"></i>
 
-    <!-- ========================= -->
-    <!-- 🔥 TOUR 2: BEACH + JUNGLE -->
-    <!-- ========================= -->
+                <div>
 
-    <article class="tour-card tour-card-green">
+                    <h3>500+</h3>
 
-      <div class="tour-image">
+                    <p>Happy Riders</p>
 
-        <img
-          src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=85"
-          alt="Horseback riding adventure through the jungle"
-          loading="lazy"
-        >
+                </div>
 
-        <span class="tour-time tour-time-green">
-          2 HOURS
-        </span>
+            </div>
 
-        <button
-          class="tour-favorite"
-          type="button"
-          aria-label="Add Beach and Jungle tour to favorites"
-        >
-          <i class="fa-regular fa-heart"></i>
-        </button>
+            <div class="stat">
 
-      </div>
+                <i class="fa-solid fa-shield-halved"></i>
 
-      <div class="tour-content">
+                <div>
 
-        <div class="tour-main-info">
+                    <h3>Certified</h3>
 
-          <h3>Beach + Jungle</h3>
+                    <p>Local Guides</p>
 
-          <div class="tour-price tour-price-green">
+                </div>
 
-            <strong>$60</strong>
+            </div>
 
-            <span>
-              PER<br>
-              PERSON
-            </span>
+            <div class="stat">
 
-          </div>
+                <i class="fa-solid fa-award"></i>
+
+                <div>
+
+                    <h3>30+ Years</h3>
+
+                    <p>Experience</p>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <ul class="tour-benefits">
-
-          <li>
-            <i class="fa-regular fa-circle-check"></i>
-            Wildlife spotting
-          </li>
-
-          <li>
-            <i class="fa-regular fa-circle-check"></i>
-            Jungle trails
-          </li>
-
-          <li>
-            <i class="fa-regular fa-circle-check"></i>
-            Beach ride
-          </li>
-
-        </ul>
-
-        <a href="#" class="tour-button tour-button-green">
-
-          <span>RESERVE NOW</span>
-
-          <i class="fa-solid fa-arrow-right"></i>
-
-        </a>
-
-      </div>
-
-    </article>
+    </section>
 
     <!-- ========================= -->
-    <!-- 🔥 TOUR 3: MOUNTAIN + RIVER -->
+    <!-- TOURS -->
     <!-- ========================= -->
 
-    <article class="tour-card tour-card-blue">
+    <section class="tours" id="tours">
 
-      <div class="tour-image">
+        <div class="section-heading">
 
-        <img
-          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85"
-          alt="Mountain and river horseback riding experience"
-          loading="lazy"
-        >
+            <span>OUR TOURS</span>
 
-        <span class="tour-time tour-time-blue">
-          3 HOURS
-        </span>
-
-        <button
-          class="tour-favorite"
-          type="button"
-          aria-label="Add Mountain and River tour to favorites"
-        >
-          <i class="fa-regular fa-heart"></i>
-        </button>
-
-      </div>
-
-      <div class="tour-content">
-
-        <div class="tour-main-info">
-
-          <h3>Mountain + River</h3>
-
-          <div class="tour-price tour-price-blue">
-
-            <strong>$70</strong>
-
-            <span>
-              PER<br>
-              PERSON
-            </span>
-
-          </div>
+            <h2>Choose Your Adventure</h2>
 
         </div>
 
-        <ul class="tour-benefits">
+        <div class="tour-grid">
 
-          <li>
-            <i class="fa-regular fa-circle-check"></i>
-            Waterfall visit
-          </li>
+            <!-- ========================= -->
+            <!-- TOUR 1 -->
+            <!-- ========================= -->
 
-          <li>
-            <i class="fa-regular fa-circle-check"></i>
-            River swim
-          </li>
+            <article class="tour-card tour-card-orange">
 
-          <li>
-            <i class="fa-regular fa-circle-check"></i>
-            Fruit snack included
-          </li>
+                <div class="tour-image">
 
-        </ul>
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=1200&q=90"
+                        alt="Beach Ride">
 
-        <a href="#" class="tour-button tour-button-blue">
+                    <span class="tour-duration">
 
-          <span>RESERVE NOW</span>
+                        1 HOUR
 
-          <i class="fa-solid fa-arrow-right"></i>
+                    </span>
 
-        </a>
+                    <button class="favorite-button">
 
-      </div>
+                        <i class="fa-regular fa-heart"></i>
 
-    </article>
+                    </button>
 
-  </div>
+                </div>
 
-</section>
+                <div class="tour-content">
 
-<script src="script.js"></script>
+                    <div class="tour-header">
+
+                        <h3>Beach Ride</h3>
+
+                        <div class="tour-price">
+
+                            <strong>$40</strong>
+
+                            <span>
+
+                                PER<br>
+
+                                PERSON
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <ul class="tour-features">
+
+                        <li>
+
+                            <i class="fa-regular fa-circle-check"></i>
+
+                            Perfect for beginners
+
+                        </li>
+
+                        <li>
+
+                            <i class="fa-regular fa-circle-check"></i>
+
+                            Stunning ocean views
+
+                        </li>
+
+                        <li>
+
+                            <i class="fa-regular fa-circle-check"></i>
+
+                            Family friendly
+
+                        </li>
+
+                    </ul>
+
+                    <a href="#" class="tour-button">
+
+                        <span>RESERVE NOW</span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+                      <!-- ========================= -->
+            <!-- TOUR 2 -->
+            <!-- ========================= -->
+
+            <article class="tour-card tour-card-green">
+
+                <div class="tour-image">
+
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=90"
+                        alt="Beach and Jungle Ride">
+
+                    <span class="tour-duration">
+
+                        2 HOURS
+
+                    </span>
+
+                    <button class="favorite-button">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                    </button>
+
+                </div>
+
+                <div class="tour-content">
+
+                    <div class="tour-header">
+
+                        <h3>Beach + Jungle</h3>
+
+                        <div class="tour-price">
+
+                            <strong>$60</strong>
+
+                            <span>
+
+                                PER<br>
+
+                                PERSON
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <ul class="tour-features">
+
+                        <li>
+
+                            <i class="fa-regular fa-circle-check"></i>
+
+                            Wildlife spotting
+
+                        </li>
+
+                        <li>
+
+                            <i class="fa-regular fa-circle-check"></i>
+
+                            Jungle trails
+
+                        </li>
+
+                        <li>
+
+                            <i class="fa-regular fa-circle-check"></i>
+
+                            Beach ride
+
+                        </li>
+
+                    </ul>
+
+                    <a href="#" class="tour-button">
+
+                        <span>RESERVE NOW</span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- ========================= -->
+            <!-- TOUR 3 -->
+            <!-- ========================= -->
+
+            <article class="tour-card tour-card-blue">
+
+                <div class="tour-image">
+
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=90"
+                        alt="Mountain and River Ride">
+
+                    <span class="tour-duration">
+
+                        3 HOURS
+
+                    </span>
+
+                    <button class="favorite-button">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                    </button>
+
+                </div>
+
+                <div class="tour-content">
+
+                    <div class="tour-header">
+
+                        <h3>Mountain + River</h3>
+
+                        <div class="tour-price">
+
+                            <strong>$70</strong>
+
+                            <span>
+
+                                PER<br>
+
+                                PERSON
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <ul class="tour-features">
+
+                        <li>
+
+                            <i class="fa-regular fa-circle-check"></i>
+
+                            Waterfall visit
+
+                        </li>
+
+                        <li>
+
+                            <i class="fa-regular fa-circle-check"></i>
+
+                            River swim
+
+                        </li>
+
+                        <li>
+
+                            <i class="fa-regular fa-circle-check"></i>
+
+                            Fruit snack included
+
+                        </li>
+
+                    </ul>
+
+                    <a href="#" class="tour-button">
+
+                        <span>RESERVE NOW</span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- AQUÍ CONTINUARÁ -->
+    <!-- WHY CHOOSE US -->
+    <!-- GALLERY -->
+    <!-- REVIEWS -->
+    <!-- FAQ -->
+    <!-- CONTACT -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+    <script src="script.js"></script>
 
 </body>
 
