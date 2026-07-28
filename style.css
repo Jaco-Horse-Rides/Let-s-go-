@@ -1,1032 +1,502 @@
 /* ========================= */
-/* PARTE 1 */
+/* RESET GENERAL */
 /* ========================= */
 
-/* ========================= */
-/* 🔥 RESET */
-/* ========================= */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-
-font-family:'Poppins',sans-serif;
-
-background:#000;
-
-overflow-x:hidden;
-
+html {
+    scroll-behavior: smooth;
 }
 
-/* ========================= */
-/* 🔥 NAVBAR */
-/* ========================= */
-
-.navbar{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-padding:25px 7%;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-z-index:999;
-
-transition:.4s;
-
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+    background: #ffffff;
+    color: #151515;
+    font-family: "Poppins", sans-serif;
 }
 
-.navbar.scrolled{
-
-background:rgba(0,0,0,.90);
-
-backdrop-filter:blur(10px);
-
+img {
+    display: block;
+    max-width: 100%;
 }
+
+a {
+    color: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
 
 /* ========================= */
-/* 🔥 LOGO */
+/* NAVBAR */
 /* ========================= */
 
-.logo h2{
-
-color:white;
-
-font-size:28px;
-
-font-weight:600;
-
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
 }
 
-/* ========================= */
-/* 🔥 MENU */
-/* ========================= */
+.navbar {
+    width: 100%;
+    min-height: 98px;
+    padding: 20px 7%;
 
-.navbar ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
 
-display:flex;
-
-gap:35px;
-
-list-style:none;
-
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.42),
+        rgba(0, 0, 0, 0)
+    );
 }
 
-.navbar ul li a{
+.logo {
+    flex-shrink: 0;
 
-color:white;
-
-text-decoration:none;
-
-font-weight:500;
-
-transition:.3s;
-
+    color: #ffffff;
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: -0.7px;
+    text-decoration: none;
 }
 
-.navbar ul li a:hover{
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
 
-color:#ff8500;
-
+    list-style: none;
 }
 
-/* ========================= */
-/* 🔥 BOTON */
-/* ========================= */
+.navbar ul li a {
+    position: relative;
 
-.btn-book{
-
-background:#ff8500;
-
-padding:16px 28px;
-
-border-radius:10px;
-
-text-decoration:none;
-
-color:white;
-
-font-weight:600;
-
-display:flex;
-
-gap:10px;
-
-align-items:center;
-
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
 }
 
-/* ========================= */
-/* 🔥 HERO */
-/* ========================= */
+.navbar ul li a::after {
+    content: "";
 
-.hero{
+    position: absolute;
+    left: 0;
+    bottom: -7px;
 
-height:100vh;
+    width: 0;
+    height: 2px;
 
-background-image:
-linear-gradient(
-rgba(0,0,0,.45),
-rgba(0,0,0,.60)),
-url("Portada.png");
+    background: #ff8500;
 
-background-size:cover;
-
-background-position:center center;
-
-background-repeat:no-repeat;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-position:relative;
-
+    transition: width 0.25s ease;
 }
 
-/* ========================= */
-/* 🔥 HERO CONTENT */
-/* ========================= */
-
-.hero-content{
-
-text-align:left;
-
-width:80%;
-
-max-width:1300px;
-
-color:white;
-
+.navbar ul li a:hover::after {
+    width: 100%;
 }
+
+.btn-book {
+    min-height: 50px;
+    padding: 0 25px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background: #ff8500;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+
+    box-shadow: 0 9px 22px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.btn-book:hover {
+    background: #f47800;
+    transform: translateY(-2px);
+}
+
 
 /* ========================= */
-/* 🔥 TITULO */
+/* HERO */
 /* ========================= */
 
-.hero-content h1{
+.hero {
+    position: relative;
 
-font-family:'Oswald',sans-serif;
+    min-height: 100vh;
+    padding: 160px 7% 150px;
 
-font-size:120px;
+    display: flex;
+    align-items: center;
 
-line-height:1;
-
-font-weight:700;
-
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.48) 45%,
+            rgba(0, 0, 0, 0.26) 100%
+        ),
+        url("Portada.png") center center / cover no-repeat;
 }
 
-.hero-content h2{
+.hero-content {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
 
-font-size:70px;
-
-color:#ff8500;
-
-font-weight:400;
-
-margin-top:-15px;
-
-font-family:'Oswald',sans-serif;
-
+    color: #ffffff;
 }
 
-.hero-content p{
-
-font-size:28px;
-
-margin-top:20px;
-
-font-weight:600;
-
+.hero-content h1 {
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(74px, 8vw, 122px);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -2px;
 }
 
-.hero-content span{
+.hero-content h2 {
+    margin-top: 4px;
 
-display:block;
+    color: #ff8500;
 
-font-size:24px;
-
-margin-top:15px;
-
-opacity:.9;
-
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(48px, 5vw, 72px);
+    font-weight: 500;
+    line-height: 1;
 }
+
+.hero-content > p {
+    margin-top: 34px;
+
+    font-size: clamp(19px, 2vw, 27px);
+    font-weight: 600;
+}
+
+.hero-content > span {
+    display: block;
+
+    margin-top: 14px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: clamp(16px, 1.5vw, 22px);
+}
+
+.hero-buttons {
+    margin-top: 37px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.btn-orange,
+.btn-video {
+    min-width: 160px;
+    min-height: 56px;
+    padding: 0 27px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.btn-orange {
+    background: #ff8500;
+}
+
+.btn-orange:hover {
+    background: #f47800;
+    transform: translateY(-2px);
+}
+
+.btn-video {
+    border: 2px solid rgba(255, 255, 255, 0.9);
+
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.btn-video:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
 
 /* ========================= */
-/* 🔥 BOTONES HERO */
+/* ESTADÍSTICAS */
 /* ========================= */
 
-.hero-buttons{
+.stats {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
 
-margin-top:40px;
+    width: min(84%, 1380px);
+    min-height: 90px;
+    padding: 21px 27px;
 
-display:flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
 
-gap:20px;
+    transform: translateX(-50%);
 
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+
+    background: rgba(15, 15, 15, 0.94);
+
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+
+    backdrop-filter: blur(10px);
 }
 
-.btn-orange{
+.stat {
+    min-width: 0;
 
-background:#ff8500;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 
-padding:18px 35px;
-
-border-radius:10px;
-
-text-decoration:none;
-
-color:white;
-
-font-weight:600;
-
+    color: #ffffff;
 }
 
-.btn-video{
+.stat i {
+    flex-shrink: 0;
 
-border:2px solid white;
+    color: #ff8500;
 
-padding:18px 35px;
-
-border-radius:10px;
-
-text-decoration:none;
-
-color:white;
-
+    font-size: 31px;
 }
 
-/* ========================= */
-/* 🔥 STATS */
-/* ========================= */
-
-.stats{
-
-position:absolute;
-
-bottom:30px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-width:85%;
-
-background:rgba(15,15,15,.90);
-
-backdrop-filter:blur(10px);
-
-border-radius:15px;
-
-padding:25px;
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:20px;
-
+.stat h3 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
-.stat{
+.stat p {
+    margin-top: 4px;
 
-display:flex;
+    color: rgba(255, 255, 255, 0.72);
 
-gap:15px;
-
-align-items:center;
-
-color:white;
-
+    font-size: 13px;
 }
 
-.stat i{
-
-font-size:35px;
-
-color:#ff8500;
-
-}
-
-.stat h3{
-
-font-size:22px;
-
-}
-
-.stat p{
-
-font-size:15px;
-
-opacity:.8;
-
-}
 
 /* ========================= */
-/* 🔥 RESPONSIVE */
+/* SECCIÓN TOURS */
 /* ========================= */
 
-@media(max-width:900px){
+.tours {
+    width: 100%;
+    padding: 54px 7% 67px;
 
-.navbar ul{
-
-display:none;
-
+    background: #fbfbfb;
 }
 
-.hero-content h1{
+.section-heading {
+    margin-bottom: 30px;
 
-font-size:65px;
-
+    text-align: center;
 }
 
-.hero-content h2{
+.section-heading span {
+    display: block;
 
-font-size:45px;
+    margin-bottom: 4px;
 
+    color: #ff7700;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
 }
 
-.stats{
+.section-heading h2 {
+    color: #111111;
 
-grid-template-columns:1fr 1fr;
-
-}
-/* ========================= */
-/* 🔥 TOURS SECTION */
-/* ========================= */
-
-.tours{
-
-background:#f8f8f8;
-
-padding:120px 7%;
-
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(34px, 3.4vw, 50px);
+    font-weight: 700;
+    line-height: 1;
 }
 
-.section-title{
+.tour-grid {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
 
-text-align:center;
-
-margin-bottom:60px;
-
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
 }
 
-.section-title span{
-
-color:#ff8500;
-
-font-weight:600;
-
-letter-spacing:2px;
-
-}
-
-.section-title h2{
-
-font-size:55px;
-
-font-family:'Oswald',sans-serif;
-
-color:#111;
-
-margin-top:10px;
-
-}
-
-.tour-cards{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:35px;
-
-}
 
 /* ========================= */
-/* 🔥 CARD */
+/* TARJETAS DE TOURS */
 /* ========================= */
 
-.card{
+.tour-card {
+    --accent: #ff7800;
 
-background:white;
+    min-width: 0;
+    overflow: hidden;
 
-border-radius:20px;
+    border: 1px solid #e7e7e7;
+    border-radius: 9px;
 
-overflow:hidden;
+    background: #ffffff;
 
-box-shadow:0 10px 30px rgba(0,0,0,.10);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
 
-transition:.4s;
-
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease;
 }
 
-.card:hover{
+.tour-card:hover {
+    transform: translateY(-6px);
 
-transform:translateY(-10px);
-
+    box-shadow: 0 13px 28px rgba(0, 0, 0, 0.15);
 }
 
-.card-image{
-
-position:relative;
-
-height:260px;
-
-overflow:hidden;
-
+.tour-card-orange {
+    --accent: #ff7800;
 }
 
-.card-image img{
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
+.tour-card-green {
+    --accent: #53aa43;
 }
 
-.badge{
-
-position:absolute;
-
-top:15px;
-
-left:15px;
-
-padding:8px 15px;
-
-border-radius:50px;
-
-font-size:14px;
-
-font-weight:600;
-
-color:white;
-
+.tour-card-blue {
+    --accent: #0674bd;
 }
 
-.orange{
-
-background:#ff8500;
-
-}
-
-.green{
-
-background:#4CAF50;
-
-}
-
-.blue{
-
-background:#1e88e5;
-
-}
 
 /* ========================= */
-/* 🔥 CARD CONTENT */
+/* IMAGEN DE CADA TOUR */
 /* ========================= */
 
-.card-content{
+.tour-image {
+    position: relative;
 
-padding:25px;
+    height: 194px;
+    overflow: hidden;
 
+    background: #dddddd;
 }
 
-.card-header{
+.tour-image::after {
+    content: "";
 
-display:flex;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
 
-justify-content:space-between;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.14),
+        transparent 35%,
+        rgba(0, 0, 0, 0.02)
+    );
 
-align-items:center;
-
-margin-bottom:20px;
-
+    pointer-events: none;
 }
 
-.card-header h3{
+.tour-image img {
+    width: 100%;
+    height: 100%;
 
-font-size:28px;
+    object-fit: cover;
 
-color:#111;
-
+    transition: transform 0.45s ease;
 }
 
-.price{
-
-font-size:38px;
-
-font-weight:700;
-
-color:#ff8500;
-
+.tour-card:hover .tour-image img {
+    transform: scale(1.045);
 }
 
-.green-price{
+.tour-duration {
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    z-index: 2;
 
-color:#4CAF50;
+    padding: 5px 10px;
 
+    border-radius: 20px;
+
+    background: var(--accent);
+    color: #ffffff;
+
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
 }
 
-.blue-price{
+.favorite-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
 
-color:#1e88e5;
+    width: 27px;
+    height: 27px;
 
-}
+    display: grid;
+    place-items: center;
 
-.card-content ul{
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 50%;
 
-list-style:none;
+    background: rgba(0, 0, 0, 0.16);
+    color: #ffffff;
 
-margin-bottom:25px;
+    font-size: 12px;
 
-}
-
-.card-content ul li{
-
-margin-bottom:12px;
-
-color:#555;
-
-font-size:16px;
-
-}
-
-/* ========================= */
-/* 🔥 BOTONES */
-/* ========================= */
-
-.btn-tour{
-
-display:block;
-
-text-align:center;
-
-padding:16px;
-
-border-radius:10px;
-
-color:white;
-
-font-weight:600;
-
-text-decoration:none;
-
-}
-
-.orange-btn{
-
-background:#ff8500;
-
-}
-
-.green-btn{
-
-background:#4CAF50;
-
-}
-
-.blue-btn{
-
-background:#1e88e5;
-
-}
-
-/* ========================= */
-/* 🔥 RESPONSIVE */
-/* ========================= */
-
-@media(max-width:1000px){
-
-.tour-cards{
-
-grid-template-columns:1fr;
-
-}
-  }
-```css
-/* ========================= */
-/* 🔥 SECCIÓN DE TOURS */
-/* ========================= */
-
-.tours{
-  position:relative;
-  width:100%;
-  padding:85px 7% 95px;
-  background:#f7f7f7;
-  overflow:hidden;
-}
-
-/* ========================= */
-/* 🔥 ENCABEZADO DE TOURS */
-/* ========================= */
-
-.tours-heading{
-  margin-bottom:42px;
-  text-align:center;
-}
-
-.tours-heading span{
-  display:block;
-  margin-bottom:7px;
-  color:#ff8500;
-  font-size:14px;
-  font-weight:700;
-  letter-spacing:2px;
-}
-
-.tours-heading h2{
-  color:#111111;
-  font-family:'Oswald',sans-serif;
-  font-size:48px;
-  font-weight:700;
-  line-height:1.1;
-}
-
-/* ========================= */
-/* 🔥 CONTENEDOR DE TARJETAS */
-/* ========================= */
-
-.tour-cards{
-  width:100%;
-  max-width:1380px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:30px;
-}
-
-/* ========================= */
-/* 🔥 TARJETA DE TOUR */
-/* ========================= */
-
-.tour-card{
-  position:relative;
-  min-width:0;
-  background:#ffffff;
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:16px;
-  box-shadow:0 10px 35px rgba(0,0,0,.10);
-  overflow:hidden;
-  transition:
-    transform .35s ease,
-    box-shadow .35s ease;
-}
-
-.tour-card:hover{
-  transform:translateY(-9px);
-  box-shadow:0 20px 45px rgba(0,0,0,.16);
-}
-
-/* ========================= */
-/* 🔥 IMAGEN DEL TOUR */
-/* ========================= */
-
-.tour-image{
-  position:relative;
-  width:100%;
-  height:270px;
-  overflow:hidden;
-  background:#dddddd;
-}
-
-.tour-image::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    to bottom,
-    rgba(0,0,0,.16),
-    transparent 38%,
-    rgba(0,0,0,.05)
-  );
-  pointer-events:none;
-}
-
-.tour-image img{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform .55s ease;
-}
-
-.tour-card:hover .tour-image img{
-  transform:scale(1.06);
-}
-
-/* ========================= */
-/* 🔥 ETIQUETA DE DURACIÓN */
-/* ========================= */
-
-.tour-time{
-  position:absolute;
-  top:17px;
-  left:17px;
-  z-index:2;
-  padding:8px 16px;
-  border-radius:100px;
-  color:#ffffff;
-  font-size:13px;
-  font-weight:700;
-  line-height:1;
-  box-shadow:0 5px 15px rgba(0,0,0,.18);
-}
-
-.tour-time-orange{
-  background:#ff8500;
-}
-
-.tour-time-green{
-  background:#4caf50;
-}
-
-.tour-time-blue{
-  background:#087bc1;
-}
-
-/* ========================= */
-/* 🔥 BOTÓN DE FAVORITOS */
-/* ========================= */
-
-.tour-favorite{
-  position:absolute;
-  top:14px;
-  right:14px;
-  z-index:2;
-  width:42px;
-  height:42px;
-  display:grid;
-  place-items:center;
-  border:1px solid rgba(255,255,255,.70);
-  border-radius:50%;
-  background:rgba(0,0,0,.20);
-  color:#ffffff;
-  font-size:19px;
-  cursor:pointer;
-  backdrop-filter:blur(6px);
-  transition:
-    background .3s ease,
-    color .3s ease,
-    transform .3s ease;
-}
-
-.tour-favorite:hover{
-  background:#ffffff;
-  color:#ff8500;
-  transform:scale(1.08);
-}
-
-/* ========================= */
-/* 🔥 CONTENIDO DE LA TARJETA */
-/* ========================= */
-
-.tour-content{
-  padding:25px 24px 23px;
-}
-
-.tour-main-info{
-  min-height:55px;
-  margin-bottom:22px;
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:18px;
-}
-
-.tour-main-info h3{
-  color:#161616;
-  font-family:'Oswald',sans-serif;
-  font-size:28px;
-  font-weight:700;
-  line-height:1.15;
-}
-
-/* ========================= */
-/* 🔥 PRECIO DEL TOUR */
-/* ========================= */
-
-.tour-price{
-  flex-shrink:0;
-  display:flex;
-  align-items:center;
-  gap:7px;
-}
-
-.tour-price strong{
-  font-size:34px;
-  font-weight:700;
-  line-height:1;
-}
-
-.tour-price span{
-  color:#444444;
-  font-size:9px;
-  font-weight:700;
-  line-height:1.1;
-}
-
-.tour-price-orange strong{
-  color:#ff7800;
-}
-
-.tour-price-green strong{
-  color:#4caf50;
-}
-
-.tour-price-blue strong{
-  color:#087bc1;
-}
-
-/* ========================= */
-/* 🔥 BENEFICIOS DEL TOUR */
-/* ========================= */
-
-.tour-benefits{
-  min-height:132px;
-  margin:0 0 23px;
-  padding:0;
-  list-style:none;
-}
-
-.tour-benefits li{
-  margin-bottom:14px;
-  display:flex;
-  align-items:center;
-  gap:11px;
-  color:#444444;
-  font-size:15px;
-  line-height:1.35;
-}
-
-.tour-benefits li:last-child{
-  margin-bottom:0;
-}
-
-.tour-benefits i{
-  font-size:17px;
-}
-
-.tour-card-orange .tour-benefits i{
-  color:#ff8500;
-}
-
-.tour-card-green .tour-benefits i{
-  color:#4caf50;
-}
-
-.tour-card-blue .tour-benefits i{
-  color:#087bc1;
-}
-
-/* ========================= */
-/* 🔥 BOTONES DE RESERVA */
-/* ========================= */
-
-.tour-button{
-  width:100%;
-  min-height:52px;
-  padding:14px 20px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:14px;
-  border-radius:7px;
-  color:#ffffff;
-  font-size:15px;
-  font-weight:700;
-  text-decoration:none;
-  box-shadow:0 6px 16px rgba(0,0,0,.12);
-  transition:
-    filter .3s ease,
-    transform .3s ease;
-}
-
-.tour-button i{
-  transition:transform .3s ease;
-}
-
-.tour-button:hover{
-  filter:brightness(1.08);
-  transform:translateY(-2px);
-}
-
-.tour-button:hover i{
-  transform:translateX(6px);
-}
-
-.tour-button-orange{
-  background:#ff7800;
-}
-
-.tour-button-green{
-  background:#4caf50;
-}
-
-.tour-button-blue{
-  background:#087bc1;
-}
-
-/* ========================= */
-/* 🔥 TOURS EN TABLET */
-/* ========================= */
-
-@media(max-width:1050px){
-
-  .tours{
-    padding:75px 5%;
-  }
-
-  .tour-cards{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-
-  .tour-card:last-child{
-    grid-column:1 / -1;
-    width:calc(50% - 15px);
-    justify-self:center;
-  }
-
-}
-
-/* ========================= */
-/* 🔥 TOURS EN CELULAR */
-/* ========================= */
-
-@media(max-width:720px){
-
-  .tours{
-    padding:65px 20px 75px;
-  }
-
-  .tours-heading{
-    margin-bottom:32px;
-  }
-
-  .tours-heading h2{
-    font-size:38px;
-  }
-
-  .tour-cards{
-    grid-template-columns:1fr;
-    gap:24px;
-  }
-
-  .tour-card:last-child{
-    grid-column:auto;
-    width:100%;
-  }
-
-  .tour-image{
-    height:235px;
-  }
-
-  .tour-content{
-    padding:23px 20px 21px;
-  }
-
-  .tour-main-info h3{
-    font-size:25px;
-  }
-
-  .tour-price strong{
-    font-size:30px;
-  }
-
-}
-
-/* ========================= */
-/* 🔥 CELULARES PEQUEÑOS */
-/* ========================= */
-
-@media(max-width:420px){
-
-  .tour-main-info{
-    flex-direction:column;
-    gap:12px;
-  }
-
-  .tour-benefits{
-    min-height:auto;
-  }
-
+    cursor: pointer;
 }
