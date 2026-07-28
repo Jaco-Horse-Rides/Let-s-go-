@@ -820,5 +820,370 @@ header {
     .tour-image {
         height: 210px;
     }
+/* ========================= */
+/* WHY CHOOSE US */
+/* ========================= */
+
+.why-us{
+
+    width:100%;
+
+    padding:90px 7%;
+
+    background:#fffdfb;
 
 }
+
+.why-title{
+
+    text-align:center;
+
+    margin-bottom:65px;
+
+}
+
+.why-title span{
+
+    display:block;
+
+    color:#ff7800;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:8px;
+
+}
+
+.why-title h2{
+
+    font-family:"Oswald",sans-serif;
+
+    font-size:56px;
+
+    font-weight:700;
+
+    color:#111;
+
+}
+
+.why-grid{
+
+    max-width:1350px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:45px;
+
+}
+
+.why-card{
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.why-icon{
+
+    width:95px;
+
+    height:95px;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.why-card:hover .why-icon{
+
+    background:#ff7800;
+
+}
+
+.why-icon i{
+
+    font-size:42px;
+
+    color:#ff7800;
+
+    transition:.35s;
+
+}
+
+.why-card:hover .why-icon i{
+
+    color:#fff;
+
+}
+
+.why-card h3{
+
+    font-size:24px;
+
+    font-family:"Oswald",sans-serif;
+
+    color:#111;
+
+    margin-bottom:14px;
+
+}
+
+.why-card p{
+
+    color:#555;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+    max-width:260px;
+
+    margin:auto;
+
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:1100px){
+
+    .why-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:50px;
+
+    }
+
+}
+
+@media(max-width:700px){
+
+    .why-title h2{
+
+        font-size:42px;
+
+    }
+
+    .why-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+/* ========================= */
+/* WHY CHOOSE US */
+/* ========================= */
+
+.why-us{
+
+    width:100%;
+
+    padding:90px 7%;
+
+    background:#fffdfb;
+
+}
+
+.why-title{
+
+    text-align:center;
+
+    margin-bottom:65px;
+
+}
+
+.why-title span{
+
+    display:block;
+
+    color:#ff7800;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:8px;
+
+}
+
+.why-title h2{
+
+    font-family:"Oswald",sans-serif;
+
+    font-size:56px;
+
+    font-weight:700;
+
+    color:#111;
+
+}
+
+.why-grid{
+
+    max-width:1350px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:45px;
+
+}
+
+.why-card{
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.why-icon{
+
+    width:95px;
+
+    height:95px;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.why-card:hover .why-icon{
+
+    background:#ff7800;
+
+}
+
+.why-icon i{
+
+    font-size:42px;
+
+    color:#ff7800;
+
+    transition:.35s;
+
+}
+
+.why-card:hover .why-icon i{
+
+    color:#fff;
+
+}
+
+.why-card h3{
+
+    font-size:24px;
+
+    font-family:"Oswald",sans-serif;
+
+    color:#111;
+
+    margin-bottom:14px;
+
+}
+
+.why-card p{
+
+    color:#555;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+    max-width:260px;
+
+    margin:auto;
+
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:1100px){
+
+    .why-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:50px;
+
+    }
+
+}
+
+@media(max-width:700px){
+
+    .why-title h2{
+
+        font-size:42px;
+
+    }
+
+    .why-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
