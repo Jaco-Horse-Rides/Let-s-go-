@@ -1009,45 +1009,54 @@ header {
 
 .why-us {
     width: 100%;
-    padding: 48px 7% 54px;
+    padding: 48px 7% 55px;
+
     background:
         radial-gradient(
             circle at center,
-            rgba(255, 255, 255, 0.95) 0%,
-            rgba(255, 250, 243, 0.96) 55%,
-            rgba(248, 239, 228, 0.98) 100%
+            #fffdf9 0%,
+            #fffaf4 55%,
+            #f8eee3 100%
         );
 }
 
-/* Contenedor principal */
+/* ========================= */
+/* CONTENEDOR */
+/* ========================= */
 
 .why-container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1450px;
     margin: 0 auto;
+
     text-align: center;
 }
 
-/* Subtítulo naranja */
+/* ========================= */
+/* SUBTÍTULO */
+/* ========================= */
 
 .why-subtitle {
     display: block;
+
     margin-bottom: 6px;
 
-    color: #f57a00;
+    color: #f27400;
 
     font-size: 13px;
     font-weight: 800;
-    letter-spacing: 1.4px;
+    letter-spacing: 1.5px;
     line-height: 1.2;
 }
 
-/* Título principal */
+/* ========================= */
+/* TÍTULO PRINCIPAL */
+/* ========================= */
 
 .why-title {
     margin: 0 0 24px;
 
-    color: #101010;
+    color: #111111;
 
     font-family: "Oswald", sans-serif;
     font-size: 38px;
@@ -1055,32 +1064,46 @@ header {
     line-height: 1.1;
 }
 
-/* Contenedor de las 4 ventajas */
+/* ========================= */
+/* CUADRÍCULA */
+/* ========================= */
 
 .why-grid {
     width: 100%;
+    margin: 0 auto;
 
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 38px;
+    gap: 40px;
 
     align-items: start;
 }
 
-/* Cada ventaja */
+/* ========================= */
+/* TARJETAS */
+/* ========================= */
 
 .why-card {
     width: 100%;
     padding: 0 10px;
 
     text-align: center;
+
+    transition: transform 0.3s ease;
 }
 
-/* Círculo del icono */
+.why-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ========================= */
+/* CÍRCULO DEL ICONO */
+/* ========================= */
 
 .why-icon {
     width: 82px;
     height: 82px;
+
     margin: 0 auto 14px;
 
     display: flex;
@@ -1089,21 +1112,46 @@ header {
 
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.94);
 
     box-shadow:
-        0 8px 18px rgba(0, 0, 0, 0.04),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+        0 7px 20px rgba(0, 0, 0, 0.05),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-/* Icono */
+/* ========================= */
+/* ICONOS */
+/* ========================= */
 
 .why-icon i {
-    color: #f57700;
+    color: #f27400;
+
     font-size: 35px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
-/* Título de cada ventaja */
+.why-card:hover .why-icon {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 12px 26px rgba(0, 0, 0, 0.09),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+.why-card:hover .why-icon i {
+    transform: scale(1.05);
+}
+
+/* ========================= */
+/* TÍTULO DE CADA TARJETA */
+/* ========================= */
 
 .why-card h3 {
     margin: 0 0 8px;
@@ -1116,7 +1164,9 @@ header {
     line-height: 1.25;
 }
 
-/* Texto de cada ventaja */
+/* ========================= */
+/* DESCRIPCIÓN */
+/* ========================= */
 
 .why-card p {
     max-width: 270px;
@@ -1130,32 +1180,6 @@ header {
 }
 
 /* ========================= */
-/* EFECTO HOVER */
-/* ========================= */
-
-.why-card {
-    transition: transform 0.3s ease;
-}
-
-.why-icon {
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.why-card:hover {
-    transform: translateY(-5px);
-}
-
-.why-card:hover .why-icon {
-    transform: scale(1.05);
-
-    box-shadow:
-        0 12px 24px rgba(0, 0, 0, 0.08),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.8);
-}
-
-/* ========================= */
 /* TABLET */
 /* ========================= */
 
@@ -1165,17 +1189,16 @@ header {
         padding: 55px 6%;
     }
 
+    .why-title {
+        margin-bottom: 34px;
+        font-size: 36px;
+    }
+
     .why-grid {
         max-width: 760px;
-        margin: 0 auto;
 
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 42px 30px;
-    }
-
-    .why-title {
-        font-size: 36px;
-        margin-bottom: 34px;
     }
 
     .why-card p {
@@ -1205,6 +1228,7 @@ header {
 
     .why-grid {
         max-width: 430px;
+
         grid-template-columns: 1fr;
         gap: 36px;
     }
