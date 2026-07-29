@@ -1074,15 +1074,19 @@ header {
 }
 
 /* ========================= */
-/* GALERÍA CARRUSEL */
+/* GALLERY */
 /* ========================= */
 
 .gallery {
     width: 100%;
-    padding: 45px 7% 55px;
+    padding: 48px 7% 58px;
 
     background: #ffffff;
 }
+
+/* ========================= */
+/* CONTAINER */
+/* ========================= */
 
 .gallery-container {
     width: 100%;
@@ -1093,23 +1097,24 @@ header {
 }
 
 /* ========================= */
-/* ENCABEZADO */
+/* TITLE */
 /* ========================= */
 
 .gallery-heading {
-    margin-bottom: 25px;
+    margin-bottom: 28px;
 }
 
 .gallery-heading span {
     display: block;
 
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 
     color: #f27400;
 
     font-size: 12px;
     font-weight: 800;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.6px;
+    line-height: 1.2;
 }
 
 .gallery-heading h2 {
@@ -1118,13 +1123,13 @@ header {
     color: #111111;
 
     font-family: "Oswald", sans-serif;
-    font-size: 38px;
+    font-size: 39px;
     font-weight: 700;
     line-height: 1.1;
 }
 
 /* ========================= */
-/* ÁREA DEL CARRUSEL */
+/* SLIDER AREA */
 /* ========================= */
 
 .gallery-slider {
@@ -1137,26 +1142,37 @@ header {
     gap: 12px;
 }
 
-.gallery-window {
+/* ========================= */
+/* SLIDER WINDOW */
+/* ========================= */
+
+.gallery-wrapper {
     width: 100%;
     overflow: hidden;
 
     border-radius: 8px;
 }
 
+/* ========================= */
+/* TRACK */
+/* ========================= */
+
 .gallery-track {
     display: flex;
     gap: 10px;
 
     transition: transform 0.55s ease;
+
+    will-change: transform;
 }
 
 /* ========================= */
-/* FOTOS */
+/* PHOTO CARD */
 /* ========================= */
 
-.gallery-slide {
-    min-width: calc((100% - 40px) / 5);
+.gallery-card {
+    flex: 0 0 calc((100% - 40px) / 5);
+
     height: 215px;
     overflow: hidden;
 
@@ -1164,35 +1180,46 @@ header {
 
     background: #dddddd;
 
-    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.16);
+    box-shadow:
+        0 5px 14px rgba(0, 0, 0, 0.16);
+
+    cursor: pointer;
 }
 
-.gallery-slide img {
+/* ========================= */
+/* PHOTO */
+/* ========================= */
+
+.gallery-card img {
     width: 100%;
     height: 100%;
+
+    display: block;
 
     object-fit: cover;
 
     transition: transform 0.4s ease;
 }
 
-.gallery-slide:hover img {
+.gallery-card:hover img {
     transform: scale(1.07);
 }
 
 /* ========================= */
-/* FLECHAS */
+/* ARROWS */
 /* ========================= */
 
 .gallery-arrow {
     width: 42px;
     height: 42px;
 
+    padding: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
-    flex-shrink: 0;
+    flex: 0 0 42px;
 
     border: none;
     border-radius: 50%;
@@ -1204,7 +1231,8 @@ header {
 
     cursor: pointer;
 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.17);
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.17);
 
     transition:
         transform 0.25s ease,
@@ -1212,17 +1240,22 @@ header {
 }
 
 .gallery-arrow:hover {
-    background: #da6500;
+    background: #d96500;
+
     transform: scale(1.08);
 }
 
+.gallery-arrow:active {
+    transform: scale(0.96);
+}
+
 /* ========================= */
-/* PUNTOS */
+/* DOTS */
 /* ========================= */
 
 .gallery-dots {
     min-height: 14px;
-    margin: 17px 0 21px;
+    margin: 18px 0 22px;
 
     display: flex;
     align-items: center;
@@ -1239,7 +1272,7 @@ header {
     border: none;
     border-radius: 50%;
 
-    background: #d2d2d2;
+    background: #d0d0d0;
 
     cursor: pointer;
 
@@ -1258,10 +1291,10 @@ header {
 }
 
 /* ========================= */
-/* BOTÓN */
+/* BUTTON */
 /* ========================= */
 
-.gallery-button {
+.gallery-btn {
     min-width: 260px;
     min-height: 45px;
     padding: 0 25px;
@@ -1287,7 +1320,7 @@ header {
         transform 0.25s ease;
 }
 
-.gallery-button:hover {
+.gallery-btn:hover {
     background: #f27400;
     color: #ffffff;
 
@@ -1300,15 +1333,20 @@ header {
 
 @media (max-width: 1000px) {
 
-    .gallery-slide {
-        min-width: calc((100% - 20px) / 3);
+    .gallery {
+        padding: 50px 6% 55px;
+    }
+
+    .gallery-card {
+        flex-basis: calc((100% - 20px) / 3);
+
         height: 235px;
     }
 
 }
 
 /* ========================= */
-/* MÓVIL */
+/* MOBILE */
 /* ========================= */
 
 @media (max-width: 600px) {
@@ -1329,21 +1367,24 @@ header {
         width: 35px;
         height: 35px;
 
-        font-size: 12px;
-    }
+        flex-basis: 35px;
 
-    .gallery-slide {
-        min-width: 100%;
-        height: 260px;
+        font-size: 12px;
     }
 
     .gallery-track {
         gap: 0;
     }
 
-    .gallery-button {
+    .gallery-card {
+        flex-basis: 100%;
+
+        height: 260px;
+    }
+
+    .gallery-btn {
         width: 100%;
-        max-width: 420px;
+        max-width: 430px;
     }
 
 }
