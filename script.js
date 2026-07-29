@@ -33,87 +33,74 @@ navbar.classList.remove("scrolled");
 /* CARRUSEL DE GALERÍA */
 /* ========================= */
 
+/* ========================= */
+/* GALLERY SLIDER */
+/* ========================= */
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const track = document.querySelector(".gallery-track");
-    const slides = document.querySelectorAll(".gallery-slide");
-    const previousButton = document.querySelector(".gallery-arrow-left");
-    const nextButton = document.querySelector(".gallery-arrow-right");
+    const slides = document.querySelectorAll(".gallery-card");
+
+    const prev = document.querySelector(".gallery-prev");
+    const next = document.querySelector(".gallery-next");
+
     const dotsContainer = document.querySelector(".gallery-dots");
 
-    if (
-        !track ||
-        slides.length === 0 ||
-        !previousButton ||
-        !nextButton ||
-        !dotsContainer
-    ) {
-        return;
-    }
+    if (!track || slides.length === 0) return;
 
-    let currentIndex = 0;
-    let automaticMovement;
+    let current = 0;
+
+    let autoSlide;
 
     /* ========================= */
-    /* CANTIDAD DE FOTOS VISIBLES */
+    /* VISIBLE CARDS */
     /* ========================= */
 
-    function getVisibleSlides() {
+    function visibleCards() {
 
-        if (window.innerWidth <= 600) {
-            return 1;
-        }
+        if (window.innerWidth <= 600) return 1;
 
-        if (window.innerWidth <= 1000) {
-            return 3;
-        }
+        if (window.innerWidth <= 1000) return 3;
 
         return 5;
+
     }
 
     /* ========================= */
-    /* ÚLTIMA POSICIÓN POSIBLE */
+    /* MAX POSITION */
     /* ========================= */
 
-    function getMaximumIndex() {
+    function maxPosition() {
 
         return Math.max(
             0,
-            slides.length - getVisibleSlides()
+            slides.length - visibleCards()
         );
 
     }
 
     /* ========================= */
-    /* CREAR PUNTOS */
+    /* CREATE DOTS */
     /* ========================= */
 
     function createDots() {
 
         dotsContainer.innerHTML = "";
 
-        const totalPositions = getMaximumIndex() + 1;
-
-        for (let index = 0; index < totalPositions; index++) {
+        for (let i = 0; i <= maxPosition(); i++) {
 
             const dot = document.createElement("button");
 
-            dot.classList.add("gallery-dot");
-
-            dot.type = "button";
-
-            dot.setAttribute(
-                "aria-label",
-                `Go to gallery position ${index + 1}`
-            );
+            dot.className = "gallery-dot";
 
             dot.addEventListener("click", () => {
 
-                currentIndex = index;
+                current = i;
 
-                updateGallery();
+                updateSlider();
 
-                restartAutomaticMovement();
+                restartAuto();
 
             });
 
@@ -124,37 +111,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ========================= */
-    /* ACTUALIZAR CARRUSEL */
+    /* UPDATE */
     /* ========================= */
 
-    function updateGallery() {
+    function updateSlider() {
 
-        const maximumIndex = getMaximumIndex();
+        if (current > maxPosition()) {
 
-        if (currentIndex > maximumIndex) {
-            currentIndex = maximumIndex;
+            current = maxPosition();
+
         }
 
-        const firstSlide = slides[0];
+        const gap = 10;
 
-        const trackStyles = window.getComputedStyle(track);
-
-        const gap = parseFloat(trackStyles.gap) || 0;
-
-        const movement =
-            currentIndex * (firstSlide.offsetWidth + gap);
+        const width = slides[0].offsetWidth + gap;
 
         track.style.transform =
-            `translateX(-${movement}px)`;
+            `translateX(-${current * width}px)`;
 
         const dots =
-            dotsContainer.querySelectorAll(".gallery-dot");
+            document.querySelectorAll(".gallery-dot");
 
         dots.forEach((dot, index) => {
 
             dot.classList.toggle(
                 "active",
-                index === currentIndex
+                index === current
             );
 
         });
@@ -162,96 +144,105 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ========================= */
-    /* FOTO ANTERIOR */
+    /* NEXT */
     /* ========================= */
 
-    function showPreviousPhotos() {
+    function nextSlide() {
 
-        const maximumIndex = getMaximumIndex();
+        current++;
 
-        currentIndex =
-            currentIndex <= 0
-                ? maximumIndex
-                : currentIndex - 1;
+        if (current > maxPosition()) {
 
-        updateGallery();
+            current = 0;
+
+        }
+
+        updateSlider();
 
     }
 
     /* ========================= */
-    /* SIGUIENTES FOTOS */
+    /* PREVIOUS */
     /* ========================= */
 
-    function showNextPhotos() {
+    function previousSlide() {
 
-        const maximumIndex = getMaximumIndex();
+        current--;
 
-        currentIndex =
-            currentIndex >= maximumIndex
-                ? 0
-                : currentIndex + 1;
+        if (current < 0) {
 
-        updateGallery();
+            current = maxPosition();
+
+        }
+
+        updateSlider();
 
     }
 
     /* ========================= */
-    /* MOVIMIENTO AUTOMÁTICO */
+    /* AUTO PLAY */
     /* ========================= */
 
-    function startAutomaticMovement() {
+    function startAuto() {
 
-        automaticMovement = window.setInterval(
-            showNextPhotos,
+        autoSlide = setInterval(
+
+            nextSlide,
+
             3500
+
         );
 
     }
 
-    function restartAutomaticMovement() {
+    function restartAuto() {
 
-        window.clearInterval(automaticMovement);
+        clearInterval(autoSlide);
 
-        startAutomaticMovement();
+        startAuto();
 
     }
 
     /* ========================= */
-    /* EVENTOS */
+    /* BUTTONS */
     /* ========================= */
 
-    previousButton.addEventListener("click", () => {
+    next.addEventListener("click", () => {
 
-        showPreviousPhotos();
+        nextSlide();
 
-        restartAutomaticMovement();
+        restartAuto();
+
+    });
+
+    prev.addEventListener("click", () => {
+
+        previousSlide();
+
+        restartAuto();
 
     });
 
-    nextButton.addEventListener("click", () => {
-
-        showNextPhotos();
-
-        restartAutomaticMovement();
-
-    });
+    /* ========================= */
+    /* RESPONSIVE */
+    /* ========================= */
 
     window.addEventListener("resize", () => {
 
         createDots();
 
-        updateGallery();
+        updateSlider();
 
     });
 
     /* ========================= */
-    /* INICIAR CARRUSEL */
+    /* START */
     /* ========================= */
 
     createDots();
 
-    updateGallery();
+    updateSlider();
 
-    startAutomaticMovement();
+    startAuto();
 
 });
