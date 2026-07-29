@@ -507,8 +507,8 @@ WATCH VIDEO
 
 </section>
 
-    <!-- ========================= -->
-<!-- GALERÍA -->
+<!-- ========================= -->
+<!-- GALERÍA CARRUSEL -->
 <!-- ========================= -->
 
 <section class="gallery" id="gallery">
@@ -528,102 +528,136 @@ WATCH VIDEO
         </div>
 
         <!-- ========================= -->
-        <!-- FOTOGRAFÍAS -->
+        <!-- CARRUSEL -->
         <!-- ========================= -->
 
-        <div class="gallery-grid">
+        <div class="gallery-slider">
 
-            <!-- FOTO 1 -->
+            <!-- FLECHA IZQUIERDA -->
 
-            <figure class="gallery-item">
+            <button
+                class="gallery-arrow gallery-arrow-left"
+                type="button"
+                aria-label="Previous photos"
+            >
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
 
-                <img
-                    src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=900&q=85"
-                    alt="Horseback riding on the beach at sunset"
-                    loading="lazy"
-                >
+            <!-- CONTENEDOR DE FOTOS -->
 
-                <div class="gallery-overlay">
+            <div class="gallery-window">
 
-                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <div class="gallery-track">
+
+                    <!-- FOTO 1 -->
+
+                    <div class="gallery-slide">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=900&q=85"
+                            alt="Horseback riding on the beach"
+                        >
+
+                    </div>
+
+                    <!-- FOTO 2 -->
+
+                    <div class="gallery-slide">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=900&q=85"
+                            alt="Tropical waterfall"
+                        >
+
+                    </div>
+
+                    <!-- FOTO 3 -->
+
+                    <div class="gallery-slide">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"
+                            alt="Costa Rica mountain landscape"
+                        >
+
+                    </div>
+
+                    <!-- FOTO 4 -->
+
+                    <div class="gallery-slide">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85"
+                            alt="Tropical jungle trail"
+                        >
+
+                    </div>
+
+                    <!-- FOTO 5 -->
+
+                    <div class="gallery-slide">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1534773728080-33d31da27ae5?auto=format&fit=crop&w=900&q=85"
+                            alt="Group horseback riding"
+                        >
+
+                    </div>
+
+                    <!-- FOTO 6 -->
+
+                    <div class="gallery-slide">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=900&q=85"
+                            alt="Adventure in nature"
+                        >
+
+                    </div>
+
+                    <!-- FOTO 7 -->
+
+                    <div class="gallery-slide">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85"
+                            alt="Mountain tour"
+                        >
+
+                    </div>
+
+                    <!-- FOTO 8 -->
+
+                    <div class="gallery-slide">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=85"
+                            alt="Costa Rica countryside"
+                        >
+
+                    </div>
 
                 </div>
 
-            </figure>
+            </div>
 
-            <!-- FOTO 2 -->
+            <!-- FLECHA DERECHA -->
 
-            <figure class="gallery-item">
-
-                <img
-                    src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=900&q=85"
-                    alt="Tropical waterfall in Costa Rica"
-                    loading="lazy"
-                >
-
-                <div class="gallery-overlay">
-
-                    <i class="fa-solid fa-magnifying-glass-plus"></i>
-
-                </div>
-
-            </figure>
-
-            <!-- FOTO 3 -->
-
-            <figure class="gallery-item">
-
-                <img
-                    src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85"
-                    alt="Mountain landscape seen during a horseback tour"
-                    loading="lazy"
-                >
-
-                <div class="gallery-overlay">
-
-                    <i class="fa-solid fa-magnifying-glass-plus"></i>
-
-                </div>
-
-            </figure>
-
-            <!-- FOTO 4 -->
-
-            <figure class="gallery-item">
-
-                <img
-                    src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85"
-                    alt="Horseback riding trail through the tropical jungle"
-                    loading="lazy"
-                >
-
-                <div class="gallery-overlay">
-
-                    <i class="fa-solid fa-magnifying-glass-plus"></i>
-
-                </div>
-
-            </figure>
-
-            <!-- FOTO 5 -->
-
-            <figure class="gallery-item">
-
-                <img
-                    src="https://images.unsplash.com/photo-1534773728080-33d31da27ae5?auto=format&fit=crop&w=900&q=85"
-                    alt="Group horseback riding adventure"
-                    loading="lazy"
-                >
-
-                <div class="gallery-overlay">
-
-                    <i class="fa-solid fa-magnifying-glass-plus"></i>
-
-                </div>
-
-            </figure>
+            <button
+                class="gallery-arrow gallery-arrow-right"
+                type="button"
+                aria-label="Next photos"
+            >
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
 
         </div>
+
+        <!-- ========================= -->
+        <!-- PUNTOS -->
+        <!-- ========================= -->
+
+        <div class="gallery-dots"></div>
 
         <!-- ========================= -->
         <!-- BOTÓN -->
