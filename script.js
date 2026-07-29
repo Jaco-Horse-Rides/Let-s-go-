@@ -246,3 +246,247 @@ document.addEventListener("DOMContentLoaded", () => {
     startAuto();
 
 });
+
+
+/* ========================= */
+/* VIDEO GALLERY SLIDER */
+/* ========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const videoTrack = document.querySelector(".video-track");
+    const videoCards = document.querySelectorAll(".video-card");
+
+    const videoPrev = document.querySelector(".video-prev");
+    const videoNext = document.querySelector(".video-next");
+
+    const videoDotsContainer =
+        document.querySelector(".video-dots");
+
+    if (
+        !videoTrack ||
+        videoCards.length === 0 ||
+        !videoPrev ||
+        !videoNext ||
+        !videoDotsContainer
+    ) {
+        return;
+    }
+
+    let currentVideo = 0;
+    let videoAutoSlide;
+
+    /* ========================= */
+    /* VISIBLE VIDEOS */
+    /* ========================= */
+
+    function visibleVideos() {
+
+        if (window.innerWidth <= 600) {
+            return 1;
+        }
+
+        if (window.innerWidth <= 1000) {
+            return 2;
+        }
+
+        return 3;
+
+    }
+
+    /* ========================= */
+    /* MAX POSITION */
+    /* ========================= */
+
+    function maxVideoPosition() {
+
+        return Math.max(
+            0,
+            videoCards.length - visibleVideos()
+        );
+
+    }
+
+    /* ========================= */
+    /* CREATE DOTS */
+    /* ========================= */
+
+    function createVideoDots() {
+
+        videoDotsContainer.innerHTML = "";
+
+        for (let i = 0; i <= maxVideoPosition(); i++) {
+
+            const dot = document.createElement("button");
+
+            dot.className = "video-dot";
+            dot.type = "button";
+
+            dot.addEventListener("click", () => {
+
+                currentVideo = i;
+
+                updateVideoSlider();
+
+                restartVideoAuto();
+
+            });
+
+            videoDotsContainer.appendChild(dot);
+
+        }
+
+    }
+
+    /* ========================= */
+    /* UPDATE SLIDER */
+    /* ========================= */
+
+    function updateVideoSlider() {
+
+        if (currentVideo > maxVideoPosition()) {
+            currentVideo = maxVideoPosition();
+        }
+
+        const gap =
+            window.innerWidth <= 600 ? 0 : 16;
+
+        const cardWidth =
+            videoCards[0].offsetWidth + gap;
+
+        videoTrack.style.transform =
+            `translateX(-${currentVideo * cardWidth}px)`;
+
+        const dots =
+            document.querySelectorAll(".video-dot");
+
+        dots.forEach((dot, index) => {
+
+            dot.classList.toggle(
+                "active",
+                index === currentVideo
+            );
+
+        });
+
+    }
+
+    /* ========================= */
+    /* NEXT */
+    /* ========================= */
+
+    function nextVideoSlide() {
+
+        currentVideo++;
+
+        if (currentVideo > maxVideoPosition()) {
+            currentVideo = 0;
+        }
+
+        updateVideoSlider();
+
+    }
+
+    /* ========================= */
+    /* PREVIOUS */
+    /* ========================= */
+
+    function previousVideoSlide() {
+
+        currentVideo--;
+
+        if (currentVideo < 0) {
+            currentVideo = maxVideoPosition();
+        }
+
+        updateVideoSlider();
+
+    }
+
+    /* ========================= */
+    /* AUTOPLAY */
+    /* ========================= */
+
+    function startVideoAuto() {
+
+        videoAutoSlide = setInterval(
+            nextVideoSlide,
+            5000
+        );
+
+    }
+
+    function restartVideoAuto() {
+
+        clearInterval(videoAutoSlide);
+
+        startVideoAuto();
+
+    }
+
+    /* ========================= */
+    /* BUTTONS */
+    /* ========================= */
+
+    videoNext.addEventListener("click", () => {
+
+        nextVideoSlide();
+
+        restartVideoAuto();
+
+    });
+
+    videoPrev.addEventListener("click", () => {
+
+        previousVideoSlide();
+
+        restartVideoAuto();
+
+    });
+
+    /* ========================= */
+    /* PAUSE AUTOPLAY */
+/* WHILE VIDEO PLAYS */
+/* ========================= */
+
+    videoCards.forEach((card) => {
+
+        const video = card.querySelector("video");
+
+        video.addEventListener("play", () => {
+            clearInterval(videoAutoSlide);
+        });
+
+        video.addEventListener("pause", () => {
+            restartVideoAuto();
+        });
+
+        video.addEventListener("ended", () => {
+            restartVideoAuto();
+        });
+
+    });
+
+    /* ========================= */
+    /* RESPONSIVE */
+/* ========================= */
+
+    window.addEventListener("resize", () => {
+
+        createVideoDots();
+
+        updateVideoSlider();
+
+    });
+
+    /* ========================= */
+    /* START */
+/* ========================= */
+
+    createVideoDots();
+
+    updateVideoSlider();
+
+    startVideoAuto();
+
+});
