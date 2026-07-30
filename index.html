@@ -688,7 +688,7 @@ WATCH VIDEO
 
 </section>
 
-    <!-- ========================= -->
+<!-- ========================= -->
 <!-- VIDEO GALLERY -->
 <!-- ========================= -->
 
@@ -710,7 +710,7 @@ WATCH VIDEO
 
         <div class="video-slider">
 
-            <!-- PREVIOUS -->
+            <!-- PREVIOUS BUTTON -->
 
             <button
                 class="video-arrow video-prev"
@@ -721,7 +721,7 @@ WATCH VIDEO
 
             </button>
 
-            <!-- WINDOW -->
+            <!-- VIDEO WINDOW -->
 
             <div class="video-wrapper">
 
@@ -736,6 +736,7 @@ WATCH VIDEO
                             controls
                             muted
                             preload="metadata">
+
                         </video>
 
                     </div>
@@ -749,6 +750,7 @@ WATCH VIDEO
                             controls
                             muted
                             preload="metadata">
+
                         </video>
 
                     </div>
@@ -762,6 +764,7 @@ WATCH VIDEO
                             controls
                             muted
                             preload="metadata">
+
                         </video>
 
                     </div>
@@ -775,6 +778,7 @@ WATCH VIDEO
                             controls
                             muted
                             preload="metadata">
+
                         </video>
 
                     </div>
@@ -783,7 +787,7 @@ WATCH VIDEO
 
             </div>
 
-            <!-- NEXT -->
+            <!-- NEXT BUTTON -->
 
             <button
                 class="video-arrow video-next"
@@ -796,24 +800,198 @@ WATCH VIDEO
 
         </div>
 
-        <!-- DOTS -->
+        <!-- VIDEO DOTS -->
 
         <div class="video-dots"></div>
 
     </div>
 
 </section>
-            <div class="video-dots"></div>
+
+
+<!-- ========================= -->
+<!-- REVIEWS -->
+<!-- ========================= -->
+
+<section class="reviews-section" id="reviews">
+
+    <div class="reviews-container">
+
+        <!-- REVIEWS TITLE -->
+
+        <div class="reviews-heading">
+
+            <span>REVIEWS</span>
+
+            <h2>What Our Riders Say</h2>
+
+            <div class="reviews-summary">
+
+                <strong id="reviews-average">
+                    0.0
+                </strong>
+
+                <span class="reviews-summary-stars">
+                    ★★★★★
+                </span>
+
+                <span id="reviews-total">
+                    0 reviews
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- REVIEW FORM -->
+        <!-- ========================= -->
+
+        <form
+            class="review-form"
+            id="review-form">
+
+            <h3>Share Your Experience</h3>
+
+            <!-- NAME -->
+
+            <div class="review-field">
+
+                <label for="review-name">
+                    Your name
+                </label>
+
+                <input
+                    type="text"
+                    id="review-name"
+                    maxlength="50"
+                    placeholder="Enter your name"
+                    required>
+
+            </div>
+
+            <!-- RATING -->
+
+            <div class="review-field">
+
+                <label>
+                    Your rating
+                </label>
+
+                <div
+                    class="review-stars"
+                    id="review-stars">
+
+                    <button
+                        type="button"
+                        data-rating="1"
+                        aria-label="1 star">
+                        ★
+                    </button>
+
+                    <button
+                        type="button"
+                        data-rating="2"
+                        aria-label="2 stars">
+                        ★
+                    </button>
+
+                    <button
+                        type="button"
+                        data-rating="3"
+                        aria-label="3 stars">
+                        ★
+                    </button>
+
+                    <button
+                        type="button"
+                        data-rating="4"
+                        aria-label="4 stars">
+                        ★
+                    </button>
+
+                    <button
+                        type="button"
+                        data-rating="5"
+                        aria-label="5 stars">
+                        ★
+                    </button>
+
+                </div>
+
+                <input
+                    type="hidden"
+                    id="review-rating"
+                    value="0">
+
+            </div>
+
+            <!-- COMMENT -->
+
+            <div class="review-field">
+
+                <label for="review-comment">
+                    Your review
+                </label>
+
+                <textarea
+                    id="review-comment"
+                    maxlength="500"
+                    placeholder="Tell us about your horseback riding experience"
+                    required>
+                </textarea>
+
+            </div>
+
+            <!-- SUBMIT BUTTON -->
+
+            <button
+                class="review-submit"
+                id="review-submit"
+                type="submit">
+
+                SEND REVIEW
+
+            </button>
+
+            <!-- FORM MESSAGE -->
+
+            <p
+                class="review-message"
+                id="review-message">
+            </p>
+
+        </form>
+
+        <!-- ========================= -->
+        <!-- PUBLISHED REVIEWS -->
+        <!-- ========================= -->
+
+        <div
+            class="reviews-grid"
+            id="reviews-list">
+        </div>
 
     </div>
 
 </section>
 
+
 <!-- ========================= -->
 <!-- JAVASCRIPT -->
 <!-- ========================= -->
 
-<script src="script.js?v=12"></script>
+<!-- Carruseles, navbar y videos -->
+
+<script src="script.js?v=13"></script>
+
+<!-- Firebase y sistema de reseñas -->
+
+<script
+    type="module"
+    src="reviews.js?v=1">
+</script>
 
 </body>
+
 </html>
