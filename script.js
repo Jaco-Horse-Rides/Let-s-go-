@@ -514,3 +514,29 @@ document.addEventListener("DOMContentLoaded", () => {
     startVideoAuto();
 
 });
+
+/* ========================= */
+/* FAQ ACCORDION */
+/* ========================= */
+
+const faqQuestions = document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach((question) => {
+
+    question.addEventListener("click", () => {
+
+        const selectedItem = question.closest(".faq-item");
+
+        document.querySelectorAll(".faq-item").forEach((item) => {
+
+            if (item !== selectedItem) {
+                item.classList.remove("active");
+            }
+
+        });
+
+        selectedItem.classList.toggle("active");
+
+    });
+
+});
