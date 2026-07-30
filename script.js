@@ -20,37 +20,31 @@ navbar.classList.remove("scrolled");
 });
 
 /* ========================= */
-/* 🔥 FUTURAS FUNCIONES */
-/* ========================= */
-
-// Tours
-// Gallery
-// Reviews
-// FAQ
-// Contact
-
-/* ========================= */
-/* CARRUSEL DE GALERÍA */
-/* ========================= */
-
-/* ========================= */
 /* GALLERY SLIDER */
 /* ========================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
     const track = document.querySelector(".gallery-track");
-    const slides = document.querySelectorAll(".gallery-card");
+    const cards = document.querySelectorAll(".gallery-card");
 
     const prev = document.querySelector(".gallery-prev");
     const next = document.querySelector(".gallery-next");
 
     const dotsContainer = document.querySelector(".gallery-dots");
 
-    if (!track || slides.length === 0) return;
+    if (
+        !track ||
+        cards.length === 0 ||
+        !prev ||
+        !next ||
+        !dotsContainer
+    ) {
+        console.log("Gallery not found.");
+        return;
+    }
 
     let current = 0;
-
     let autoSlide;
 
     /* ========================= */
@@ -75,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         return Math.max(
             0,
-            slides.length - visibleCards()
+            cards.length - visibleCards()
         );
 
     }
@@ -92,9 +86,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const dot = document.createElement("button");
 
-            dot.className = "gallery-dot";
+            dot.classList.add("gallery-dot");
 
-            dot.addEventListener("click", () => {
+            if (i === current) {
+
+                dot.classList.add("active");
+
+            }
+
+            dot.addEventListener("click", function () {
 
                 current = i;
 
@@ -111,35 +111,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ========================= */
-    /* UPDATE */
+    /* UPDATE SLIDER */
     /* ========================= */
 
     function updateSlider() {
 
-        if (current > maxPosition()) {
+        const gap = parseFloat(
+            window.getComputedStyle(track).gap
+        ) || 0;
 
-            current = maxPosition();
-
-        }
-
-        const gap = 10;
-
-        const width = slides[0].offsetWidth + gap;
+        const width =
+            cards[0].getBoundingClientRect().width + gap;
 
         track.style.transform =
             `translateX(-${current * width}px)`;
 
-        const dots =
-            document.querySelectorAll(".gallery-dot");
+        document
+            .querySelectorAll(".gallery-dot")
+            .forEach(function (dot, index) {
 
-        dots.forEach((dot, index) => {
+                dot.classList.toggle(
+                    "active",
+                    index === current
+                );
 
-            dot.classList.toggle(
-                "active",
-                index === current
-            );
-
-        });
+            });
 
     }
 
@@ -149,11 +145,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function nextSlide() {
 
-        current++;
-
-        if (current > maxPosition()) {
+        if (current >= maxPosition()) {
 
             current = 0;
+
+        } else {
+
+            current++;
 
         }
 
@@ -167,11 +165,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function previousSlide() {
 
-        current--;
-
-        if (current < 0) {
+        if (current <= 0) {
 
             current = maxPosition();
+
+        } else {
+
+            current--;
 
         }
 
@@ -180,10 +180,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ========================= */
-    /* AUTO PLAY */
+    /* AUTOPLAY */
     /* ========================= */
 
     function startAuto() {
+
+        clearInterval(autoSlide);
 
         autoSlide = setInterval(
 
@@ -197,17 +199,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function restartAuto() {
 
-        clearInterval(autoSlide);
-
         startAuto();
 
     }
 
     /* ========================= */
-    /* BUTTONS */
+    /* BUTTON EVENTS */
     /* ========================= */
 
-    next.addEventListener("click", () => {
+    next.addEventListener("click", function () {
 
         nextSlide();
 
@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    prev.addEventListener("click", () => {
+    prev.addEventListener("click", function () {
 
         previousSlide();
 
@@ -224,10 +224,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ========================= */
+    /* PAUSE ON HOVER */
+    /* ========================= */
+
+    const slider =
+        document.querySelector(".gallery-slider");
+
+    slider.addEventListener("mouseenter", function () {
+
+        clearInterval(autoSlide);
+
+    });
+
+    slider.addEventListener("mouseleave", function () {
+
+        startAuto();
+
+    });
+
+    /* ========================= */
     /* RESPONSIVE */
     /* ========================= */
 
-    window.addEventListener("resize", () => {
+    window.addEventListener("resize", function () {
+
+        if (current > maxPosition()) {
+
+            current = maxPosition();
+
+        }
 
         createDots();
 
@@ -246,7 +271,6 @@ document.addEventListener("DOMContentLoaded", () => {
     startAuto();
 
 });
-
 
 /* ========================= */
 /* VIDEO GALLERY SLIDER */
